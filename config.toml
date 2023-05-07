@@ -59,7 +59,7 @@ paginate = 5
 
     [languages.en.params.logo]
       logoText = "Samirtech"
-      logoHomeLink = "https://samritech.org"
+      logoHomeLink = "https://samirtech.org"
 
     [languages.en.menu]
       [[languages.en.menu.main]]
