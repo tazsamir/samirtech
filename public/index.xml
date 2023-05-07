@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Samirtech</title>
+    <link>/</link>
+    <description>Recent content on Samirtech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 07 May 2023 12:21:50 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Showcase</title>
+      <link>/showcase/</link>
+      <pubDate>Sun, 07 May 2023 12:21:50 +0100</pubDate>
+      
+      <guid>/showcase/</guid>
+      <description>showcase</description>
+      <content>&lt;h1 id=&#34;to-do&#34;&gt;To do&lt;/h1&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>/about/</link>
+      <pubDate>Sun, 07 May 2023 11:45:50 +0100</pubDate>
+      
+      <guid>/about/</guid>
+      <description>about</description>
+      <content>&lt;h1 id=&#34;tahir-samir&#34;&gt;Tahir Samir&lt;/h1&gt;
+&lt;hr&gt;
+&lt;p&gt;West Midlands,                  &lt;br&gt;
+United Kingdom&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;mailto:tahir@samirtech.org&#34;&gt;tahir@samirtech.org&lt;/a&gt;                        &lt;a href=&#34;https://www.linkedin.com/in/taz-samir-318603182/&#34;&gt;Linkedin&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;
+&lt;p&gt;Went to High School, and College, then tried University but preferred real experience.&lt;/p&gt;
+&lt;h2 id=&#34;experience&#34;&gt;Experience&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Snow Software&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2020-Present&lt;/p&gt;
+&lt;p&gt;Technical Support Engineer&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Using Salesforce to view and resolve cases/tickets for large and small customers. Knowledge of Linux and Windows devices, Being able to Troubleshoot operating systems, network, database and being able to think on your feet. Also help with all connectors including ServiceNow, Adobe, Office, Vmware and various others.&lt;/li&gt;
+&lt;li&gt;Provide documentation and collaborate with internal teams to ensure resolutions are provided&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;SOTI&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2018-2022&lt;/p&gt;
+&lt;p&gt;Technical Analyst | Senior Technical Analyst&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Using salesforce to view and resolve case tckets for a MDM solution, knowledge of all devices, ranging from windows CE , Android, IPhone, Google Android Enterprise, Android Classic. Use of adb, troubleshooting certificates, network, servers, and raising Jiras to developers. Provide help to junior technical analyst.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Service Birmingham | Birmingham City Council&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2010-2018&lt;/p&gt;
+&lt;p&gt;Incident Handler | Team Lead&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Answer 40+ calls per day from internal, public customers&lt;/li&gt;
+&lt;li&gt;Learn how to remote on to machines
+*Rest Active Directory Passwords&lt;/li&gt;
+&lt;li&gt;Created/Deleted Active Directory Accounts&lt;/li&gt;
+&lt;li&gt;Provided different group access via Active Directory/GPO&lt;/li&gt;
+&lt;li&gt;Supported software from internal, to Office, Windows XP to Windows 10&lt;/li&gt;
+&lt;li&gt;Provided training, and conducted interviews for new starters&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;technical-experience&#34;&gt;Technical Experience&lt;/h2&gt;
+&lt;p&gt;I have Been using Computers Windows 3.1 (I have older siblings)
+Got really into tech, when my high school provided a computer, we shared it, I broke it several times, by installing crap-ware/not knowing how to manage a computer as a teenager, I learned a lot. Got into console gaming and fixing computers, gadgets since the PSP days!
+I have built several computers, my first was a AMD Phenom and my latest is a AMD 5800 (I have built several Intel machines).&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;strong&gt;HomeLab&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;Started working on my homelab since 2018&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Invested in unraid then into pfsense as a virtual router, moved to physical router and downsized into a HPT730 as my main pfsense router.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Currently using Unraid, TrueNas, Proxmox, Unifi in my HomeLab, I am using Docker containers using cli or portainer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now starting to view more logs with, Graylog, Wazuh and Zabbix&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;dl&gt;
+&lt;dt&gt;&lt;strong&gt;Open Source&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;I really enjoy using open source software, i use at home in my home lab, including bitwarden, nextcloud, urbackup and various other software.&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;Current Software&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows 11 on Main PC - largely because I have nephews and neices who play Valorant.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dd&gt;&lt;ul&gt;
+&lt;li&gt;Laptop has Ubuntu 22.03.
+Really enjoy learning using Linux, Nobara OS is great!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/dd&gt;
+&lt;dt&gt;&lt;strong&gt;Regarding Privacy&lt;/strong&gt;&lt;/dt&gt;
+&lt;dd&gt;I Would like a more Privacy centered world but I use a Google Pixel as my daily driver and Use Windows so moot point!&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;Anything you want to know! Feel free to ask!&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Second Post</title>
+      <link>/posts/second/</link>
+      <pubDate>Sun, 07 May 2023 11:11:50 +0100</pubDate>
+      
+      <guid>/posts/second/</guid>
+      <description>Second post Welcome to my second post Test</description>
+      <content>&lt;h1 id=&#34;second-post&#34;&gt;Second post&lt;/h1&gt;
+&lt;h2 id=&#34;welcome-to-my-second-post&#34;&gt;Welcome to my second post&lt;/h2&gt;
+&lt;p&gt;Test&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>/posts/hello-world/</link>
+      <pubDate>Sun, 07 May 2023 00:17:50 +0100</pubDate>
+      
+      <guid>/posts/hello-world/</guid>
+      <description>Hello world Welcome to my first post I hope to be adding more entries here. Please stay tuned.</description>
+      <content>&lt;h1 id=&#34;hello-world&#34;&gt;Hello world&lt;/h1&gt;
+&lt;h2 id=&#34;welcome-to-my-first-post&#34;&gt;Welcome to my first post&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/static/bracknell-capitol-building.jpg&#34; alt=&#34;office&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I hope to be adding more entries here. Please stay tuned.&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
