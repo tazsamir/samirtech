@@ -7,6 +7,6 @@ draft: false
 # Hello world 
 ## Welcome to my first post
 
-![office](/bracknell-capitol-building.jpg)
+[testimage](bracknell-capitol-building.jpg)
 
 I hope to be adding more entries here. Please stay tuned.
