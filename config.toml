@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://blog.samirtech.org/"
 languageCode = "en-us"
 theme = "terminal"
 paginate = 5
@@ -59,7 +59,7 @@ paginate = 5
 
     [languages.en.params.logo]
       logoText = "Samirtech"
-      logoHomeLink = "/"
+      logoHomeLink = "https://samritech.org"
 
     [languages.en.menu]
       [[languages.en.menu.main]]
