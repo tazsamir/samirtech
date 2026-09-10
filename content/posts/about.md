@@ -70,7 +70,7 @@ I have built several computers, my first was a AMD Phenom and my latest is a AMD
 **HomeLab**
 : Started working on my homelab since 2018
 
-:HomeLab - *n100 with docker, 2x truenas-scale servers,1 truenas-scale syncs to the other weekly for backups, and also backups daily to backblaze, I also have a proxmox server for virtual machines.
+: * HomeLab - n100 with docker, 2x truenas-scale servers,1 truenas-scale syncs to the other weekly for backups, and also backups daily to backblaze, I also have a proxmox server for virtual machines.
 September 2026 - Experimenting with Hermes agent.
 
 **Current Setup**
