@@ -63,9 +63,9 @@ Incident Handler | Team Lead
 Technical Experience
 --------------------
 
-I have Been using Computers Windows 3.1 (I have older siblings)
-Got really into tech, when my high school provided a computer, we shared it, I broke it several times, by installing crap-ware/not knowing how to manage a computer as a teenager, I learned a lot. Got into console gaming and fixing computers, gadgets since the PSP days!
-I have built several computers, my first was a AMD Phenom and my latest is a AMD 5800 (I have built several Intel machines).
+I have Been using Computers since Windows 3.1 (I have older siblings)
+Got really into technology, when my high school provided a computer - 2004/2005, we shared it, I broke it several times, by installing crap-ware/not knowing how to manage a computer as a teenager, I learned a lot. Got into console gaming and fixing computers, gadgets since the PSP days!
+I have built several computers, my first was a AMD Phenom and my latest is a AMD 5800 (I have built several Intel machines). I own Raspberry Pi's and micro pc's and old consoles/handhelds, i don't game often.
 
 **HomeLab**
 : Started working on my homelab since 2018
@@ -77,8 +77,6 @@ September 2026 - Experimenting with Hermes agent.
 
 : * Main PC - Fedora with KDE/Window tiling manager/noctalia quick shell.
 : * Laptop - has Fedora with KDE/window tiling manager/noctalia quick shell.
-
-
 
 **Regarding Privacy and Linux**
 : I Would like a more Privacy centred world but I use a Google Pixel, been using linux since 2018, switched back and forth with windows, since 2022 main streamed Linux, previously used ubuntu, linux mint,debian, mostly arch until mid year of 2026 and now on fedora.
