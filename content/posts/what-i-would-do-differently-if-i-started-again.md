@@ -1,15 +1,7 @@
 ---
-title: "what-i-would-do-differently-if-i-started-again"
-date: 2026-09-28T09:00:00+01:00
-draft: false
-series: ["Learning Backups the Hard Way"]
-schema: 2
----
-
----
 title: "What I Would Do Differently If I Started Again"
 date: 2026-09-16T09:00:00+01:00
-draft: true
+draft: false
 description: "The practical lessons I took from wiping my TrueNAS server and recovering years of family photos."
 tags: [backups, homelab, lessons-learned, truenas]
 series: ["Learning Backups the Hard Way"]

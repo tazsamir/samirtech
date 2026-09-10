@@ -1,15 +1,7 @@
 ---
-title: "why-a-backup-is-more-than-another-copy"
-date: 2026-09-17T09:00:00+01:00
-draft: false
-series: ["Learning Backups the Hard Way"]
-schema: 2
----
-
----
 title: "Why a Backup Is More Than Just Another Copy"
 date: 2026-09-11T09:00:00+01:00
-draft: true
+draft: false
 description: "Recovering my family photos taught me that a backup is only useful when it can be unlocked, restored and verified."
 tags: [backups, homelab, data-recovery]
 series: ["Learning Backups the Hard Way"]

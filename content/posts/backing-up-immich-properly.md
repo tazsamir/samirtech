@@ -1,15 +1,7 @@
 ---
-title: "backing-up-immich-properly"
-date: 2026-09-19T09:00:00+01:00
-draft: false
-series: ["Learning Backups the Hard Way"]
-schema: 2
----
-
----
 title: "Backing Up Immich Properly: Photos, Database and Encryption Keys"
 date: 2026-09-13T09:00:00+01:00
-draft: true
+draft: false
 description: "What I learned about backing up an Immich installation after rebuilding one from recovered media and database data."
 tags: [immich, backups, truenas, databases]
 series: ["Learning Backups the Hard Way"]

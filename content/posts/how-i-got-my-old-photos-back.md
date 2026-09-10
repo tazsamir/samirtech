@@ -1,14 +1,6 @@
 ---
-title: "how-i-got-my-old-photos-back"
-date: 2026-09-10T09:00:00+01:00
-draft: false
-series: ["Learning Backups the Hard Way"]
-schema: 2
----
-
----
 title: "How I Got My Old Photos Back After Wiping My NAS"
-date: 2026-08-25T12:00:00+01:00
+date: 2026-09-10T09:00:00+01:00
 description: "I accidentally wiped my main TrueNAS server and thought years of family photos were gone. This is how I recovered them from a messy collection of replicas, cloud backups and an old Immich installation."
 tags:
   - homelab
@@ -19,6 +11,7 @@ tags:
 series:
   - "Learning Backups the Hard Way"
 series_order: 1
+draft: false
 ---
 
 There are some files you can download again. Family photos are not among them.

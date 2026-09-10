@@ -1,15 +1,7 @@
 ---
-title: "using-a-second-nas-and-an-off-site-raspberry-pi"
-date: 2026-09-27T09:00:00+01:00
-draft: false
-series: ["Learning Backups the Hard Way"]
-schema: 2
----
-
----
 title: "Using a Second NAS and an Off-Site Raspberry Pi"
 date: 2026-09-15T09:00:00+01:00
-draft: true
+draft: false
 description: "Why my second NAS is useful but not enough, and how I plan to add an off-site Raspberry Pi backup."
 tags: [backups, truenas, raspberry-pi, homelab]
 series: ["Learning Backups the Hard Way"]

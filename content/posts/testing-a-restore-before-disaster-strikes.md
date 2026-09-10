@@ -1,15 +1,7 @@
 ---
-title: "testing-a-restore-before-disaster-strikes"
-date: 2026-09-20T09:00:00+01:00
-draft: false
-series: ["Learning Backups the Hard Way"]
-schema: 2
----
-
----
 title: "Testing a Restore Before Disaster Strikes"
 date: 2026-09-14T09:00:00+01:00
-draft: true
+draft: false
 description: "The restore checks I am using after discovering that a backup job completing does not prove the data can be recovered."
 tags: [backups, testing, data-recovery, homelab]
 series: ["Learning Backups the Hard Way"]

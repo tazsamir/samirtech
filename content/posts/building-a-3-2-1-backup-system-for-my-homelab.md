@@ -1,15 +1,7 @@
 ---
-title: "building-a-3-2-1-backup-system-for-my-homelab"
-date: 2026-09-18T09:00:00+01:00
-draft: false
-series: ["Learning Backups the Hard Way"]
-schema: 2
----
-
----
 title: "Building a 3-2-1 Backup System for My Homelab"
 date: 2026-09-12T09:00:00+01:00
-draft: true
+draft: false
 description: "The practical 3-2-1 backup plan I am building after recovering my photos from a wiped TrueNAS server."
 tags: [backups, homelab, truenas, 321-backup]
 series: ["Learning Backups the Hard Way"]
