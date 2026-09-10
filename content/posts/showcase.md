@@ -17,23 +17,19 @@ This is my personal lab: a small collection of repurposed hardware, storage and 
 
 ### Fractal Node 804
 
-The Node 804 is the main storage chassis. Its compact cube layout gives me room for multiple drives while keeping the system suitable for a home office. It is used for TrueNAS storage and the primary photo and file workloads.
+The Node 804 is my TrueNAS Voyager. It is the second NAS and normally stays powered off or suspended, receiving local replication from Normandy for recovery and protected copies.
 
 ### GEEKOM N100
 
 The N100 is the quiet, efficient always-on Docker host. It runs the lightweight services that do not need a full server, including the home proxy, DNS and monitoring tools.
 
-### HP Enterprise PC
+### HP Enterprise desktop — TrueNAS Normandy
 
-The HP Enterprise PC is a repurposed workstation for heavier or experimental workloads. It gives the lab a place for virtual machines and tests without putting the always-on services at risk.
+The HP Enterprise desktop is my main TrueNAS server, Normandy. It is housed in a two-bay enclosure and runs the live storage, photo library and primary file workloads.
 
-### Two-bay drive enclosure
+### Dell Micro PC — Proxmox
 
-The two-bay enclosure provides removable or secondary storage for protected copies, migrations and recovery work. It is useful precisely because it is separate from the main NAS.
-
-### Dell Micro PC
-
-The Dell Micro PC is another small, low-power machine for experiments and supporting services. Small business hardware like this is inexpensive to run and easy to replace.
+The Dell Micro PC runs Proxmox for virtual machines and experiments. It is currently powered off, so it is available when needed without adding to the always-on power draw.
 
 ### GL.iNet router
 
