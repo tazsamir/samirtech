@@ -1,0 +1,30 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Hugo Extended
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "~0.142.0"
+          extended: true
+
+      - name: Build with Hugo
+        run: |
+          echo "HUGO_ENVIRONMENT_PRODUCTION=1"> $GITHUB_ENV
+          hugo --source=$(pwd)
+    
+      - name: Deploy to GitHub Pages (GitHub Pages fallback)
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh_pages
+          publish_dir: ./public
