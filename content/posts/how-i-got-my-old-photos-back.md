@@ -5,3 +5,171 @@ date: 2026-09-10T09:00:00+01:00
 draft: false
 series: ["Learning Backups the Hard Way"]
 schema: 2
+tags:
+  - homelab
+  - backups
+  - data-recovery
+  - truenas
+  - immich
+series:
+  - "Learning Backups the Hard Way"
+series_order: 1
+---
+
+There are some files you can download again. Family photos are not among them.
+
+I recently learned that lesson in the most uncomfortable way possible. While moving to a new home, I reset my main TrueNAS server without properly reading what the reset operation would do. The result was that I wiped the system and thought I had lost years of photos and home videos.
+
+This included the ordinary moments that become important only after time has passed—old computers, holidays, family pictures and photos of my son. Some of the recovered photos went all the way back to 2009.
+
+I did eventually get them back, but not because I had a perfect backup system. I got them back because fragments of several old systems still existed and, after a lot of investigation, I managed to piece them together.
+
+This is what happened.
+
+## The mistake
+
+My main storage server ran TrueNAS and hosted Immich, my self-hosted photo library. During our move to a new home, I was getting the homelab set up again and used the TrueNAS reset option. I did not stop and read carefully enough to understand exactly what would be reset or what the consequences would be.
+
+That mistake wiped the system I was relying on for my photo library. It was not a disk failure, ransomware attack or obscure software bug. It was a destructive action carried out by me during an already busy period, because I assumed I understood the option instead of verifying it first.
+
+Moving home meant equipment had been powered down, disconnected and relocated, and I was trying to bring several parts of the network and homelab back online. That context does not change the result, but it explains how easily a familiar-looking reset option turned into a serious data-loss incident.
+
+The full impact was not immediately obvious. The server could be rebuilt, containers could be redeployed and applications could be downloaded again. The irreplaceable part was the data: the original photos and videos behind Immich.
+
+I had backups—or at least I believed I did.
+
+That distinction became important very quickly.
+
+## A backup existing does not mean it can be restored
+
+I had previously replicated data to a second TrueNAS machine. That sounded reassuring until I discovered that some of the replicated datasets were encrypted and I no longer had the required encryption key.
+
+The data was physically present, but parts of it were effectively locked away.
+
+I also had cloud backups in Backblaze B2, created using Duplicati. I no longer had the original Duplicati installation, but fortunately I had kept its passphrase. That gave me another possible route back to the files.
+
+At this point my recovery options looked something like this:
+
+- a second NAS containing replicas, some of which I could not unlock;
+- Backblaze B2 data created by an application I no longer had running;
+- more than one old Immich backup location;
+- possible copies on older computers and external drives;
+- a current Immich server that was already receiving new uploads.
+
+It was not a clean backup. It was an archaeological dig.
+
+## Recovering the old Immich system
+
+I restored the older Immich installation on the second TrueNAS server and began checking what was actually there.
+
+That first successful login was a major relief. My wife's photos appeared, and the oldest items in the library went back to 2009. Seeing the thumbnails was encouraging, but I did not yet treat that as proof of a successful recovery.
+
+An Immich library is more than a folder of images. It also has a PostgreSQL database containing users, albums, metadata and the relationships between assets. A working web interface can still hide missing originals, broken thumbnails or an incomplete database.
+
+Before doing more, I created a fresh database dump and ran checks against the restored database. The database appeared healthy, which meant the old instance could become a source for a safer migration.
+
+## Decrypting and pulling the files back from Backblaze
+
+The Backblaze copy was not a normal folder that could simply be opened and copied. The files had been uploaded through Duplicati and were stored using its encrypted backup format.
+
+That meant the Backblaze bucket contained backup data, not immediately usable JPGs, MP4s and other originals. The encryption passphrase was therefore just as important as the B2 account details. Without it, I might have been looking at a complete cloud backup that I still could not restore.
+
+The recovery process was:
+
+1. Reconnect the backup software to the correct Backblaze B2 account, bucket and backup location.
+2. Add the original encryption setting and passphrase from the old backup configuration.
+3. Run a restore rather than copying the encrypted backup objects directly.
+4. Select the required photo and Immich backup folders.
+5. Restore them to a separate recovery location on TrueNAS.
+6. Confirm that the output consisted of normal files that could be opened independently of the backup software.
+
+The backup application handled decryption during the restore. The files written to the recovery dataset were usable originals; they did not require Duplicati or Backblaze every time I wanted to view a photograph.
+
+I kept the recovered files separate from the live Immich library at first. That gave me a safe working copy and meant I could compare, inspect and retry the restore without damaging the source or the active server.
+
+The cloud restore took patience. Backblaze download limits were reached more than once, so the recovery could not be completed in one uninterrupted run.
+
+I used `rsync` for the subsequent file copies because interrupted transfers could be resumed without starting everything again. That mattered: some runs stopped in the 80–90 percent range, and the photo directories contained tens of thousands of files spread across many subdirectories.
+
+I also found two different backup roots in B2. That was useful because one could contain files missing from the other, but it made the recovery harder to reason about. I had to compare, resume and verify rather than blindly copying one folder and assuming it was complete.
+
+This stage taught me an important difference:
+
+> Copying files is an activity. Verifying that the correct files arrived is the recovery.
+
+## Migrating into the active Immich server
+
+While I was recovering the old server, my active Immich instance was still receiving new phone uploads. I did not want to replace its database with an old one and risk losing everything added since the failure.
+
+Instead, I kept the restored Immich instance as the source and migrated its contents into the active instance using `immich-go`.
+
+The migration was not perfectly clean. Early attempts failed because the correct API access had not been configured. Later runs reported missing originals, server errors and thumbnail-related failures. The larger migration also produced many duplicates—which, in this case, was better than silently losing files.
+
+I reran the migration and reduced the remaining errors. By the final retries, my own library was down to a single failed upload caused by an empty file, while my wife's migration had a much smaller number of remaining download errors to investigate.
+
+Most importantly, the old photographs began appearing in the current Immich mobile app. My wife's library returned, then mine. Some thumbnails still needed to be regenerated, but opening the affected assets showed that many of the originals were present.
+
+That was the moment I could finally say: I have my photos back.
+
+## Verifying that the recovery was real
+
+I did not rely only on Immich showing a thumbnail. Some thumbnails initially reported errors even though the original opened when selected. That is why I checked the restored files directly and compared selected files with SHA-256 hashes between the recovered Immich data and a separate restore-test copy.
+
+The verification included opening photographs and videos from different years, checking older material rather than only recent uploads, confirming that originals opened outside Immich, checking that the database was healthy, and making sure the active Immich server could display the migrated assets on the phone.
+
+This was also how I found that some items from before 2024 had not initially migrated. Seeing a library in the application was not enough; I had to check the timeline and retry the missing material.
+
+## What saved the photos
+
+No single part of my setup saved me. Recovery was possible because several imperfect layers overlapped:
+
+- the second NAS still held a usable copy of the old Immich installation;
+- I had retained the Duplicati encryption passphrase;
+- Backblaze B2 contained files that could be restored;
+- database backups preserved the structure of the Immich library;
+- resumable tools let me continue large transfers after interruptions;
+- I did not immediately delete the old sources after the first apparent success.
+
+Any one of those could have been the difference between recovery and permanent loss.
+
+## What made it harder than it needed to be
+
+I also made nearly every classic backup mistake:
+
+- I had encrypted replicas without being certain the recovery key was safely stored;
+- I had not regularly tested a full restore;
+- the backups were spread across different systems and folder structures;
+- I was unsure which copy was the newest or most complete;
+- the application, database and original media needed to be considered separately;
+- my second NAS was usually powered off, so it was not a simple always-current replica;
+- cloud download limits slowed recovery at exactly the time I most wanted it to be fast.
+
+The problem was not that I had no backups. The problem was that I did not have a documented, tested recovery path.
+
+## Where things stand now
+
+The recovered photos have been migrated into the active Immich server. I have fresh database dumps, and I am keeping the restored server and old backup sets untouched until I have finished verification.
+
+There is also a separate collection of older family photographs recovered from a general Backblaze backup. I do not plan to import all of those into Immich. Instead, I will keep selected originals in a dedicated photos dataset so that an application is not the only way to access them.
+
+The next job is not glamorous, but it is important:
+
+1. verify totals and sample files from different years;
+2. confirm that original images and videos open, not just thumbnails;
+3. regenerate missing Immich thumbnails;
+4. create fresh, automated backups of both the media and database;
+5. keep an off-site copy;
+6. store the TrueNAS encryption keys and backup passphrases in more than one safe place;
+7. document the restore procedure and test it.
+
+Only after that will I remove old or inaccessible backup sets.
+
+## The lesson
+
+Before this happened, I thought of backups mainly as copies. Now I think of them as a recoverable system.
+
+A backup is not proven because a scheduled job says it completed. It is proven when you can rebuild the service, unlock the data, restore the database, retrieve the original files and confirm that they open.
+
+I was lucky. I had enough pieces left to reconstruct years of memories, including photographs I had not seen for a long time. The experience was stressful, slow and sometimes confusing, but it has given me a much clearer idea of how I want to protect my family's data in future.
+
+This article is the first in a series about rebuilding my backup strategy properly. Next I will cover why backups matter, what the 3-2-1 rule actually means for a home server, how to back up Immich's media and database together, and the system I am putting in place so that recovering from the next failure does not depend on luck.
