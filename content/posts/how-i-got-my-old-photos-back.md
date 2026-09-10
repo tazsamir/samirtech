@@ -1,16 +1,7 @@
-
 ---
 title: "how-i-got-my-old-photos-back"
 date: 2026-09-10T09:00:00+01:00
 draft: false
-series: ["Learning Backups the Hard Way"]
-schema: 2
-tags:
-  - homelab
-  - backups
-  - data-recovery
-  - truenas
-  - immich
 series:
   - "Learning Backups the Hard Way"
 series_order: 1
