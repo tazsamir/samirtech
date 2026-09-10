@@ -24,10 +24,17 @@ Went to High School, and College, then tried University but preferred real exper
 
 Experience
 ----------
+**Flexera**
 
+2022-Present
+
+Senior Technical Support Engineer
+* Using Salesforce to view and resolve cases/tickets for large and small customers. Knowledge of Linux and Windows devices, Being able to Troubleshoot operating systems, network, database and being able to think on your feet. Also help with all connectors including ServiceNow, Adobe, Office, Vmware and various others. Raise JIRA's, liaise cases from support engineers, and other colleagues, provide knowledge articles and resolutions.
+* Provide documentation and collaborate with internal teams to ensure resolutions are provided
+  
 **Snow Software**
 
-2020-Present
+2020-2022
 
 Technical Support Engineer
 * Using Salesforce to view and resolve cases/tickets for large and small customers. Knowledge of Linux and Windows devices, Being able to Troubleshoot operating systems, network, database and being able to think on your feet. Also help with all connectors including ServiceNow, Adobe, Office, Vmware and various others.
@@ -63,22 +70,17 @@ I have built several computers, my first was a AMD Phenom and my latest is a AMD
 **HomeLab**
 : Started working on my homelab since 2018
 
-* Invested in unraid then into pfsense as a virtual router, moved to physical router and downsized into a HPT730 as my main pfsense router.
+:HomeLab - *n100 with docker, 2x truenas-scale servers,1 truenas-scale syncs to the other weekly for backups, and also backups daily to backblaze, I also have a proxmox server for virtual machines.
+September 2026 - Experimenting with Hermes agent.
 
-* Currently using Unraid, TrueNas, Proxmox, Unifi in my HomeLab, I am using Docker containers using cli or portainer. 
-* Now starting to view more logs with, Graylog, Wazuh and Zabbix
+**Current Setup**
 
-**Open Source**
-: I really enjoy using open source software, i use at home in my home lab, including bitwarden, nextcloud, urbackup and various other software. 
+: * Main PC - Fedora with KDE/Window tiling manager/noctalia quick shell.
+: * Laptop - has Fedora with KDE/window tiling manager/noctalia quick shell.
 
- 
-**Current Software**
 
-: * Windows 11 on Main PC - largely because I have nephews and neices who play Valorant.
-: * Laptop has Ubuntu 22.03.
-Really enjoy learning using Linux, Nobara OS is great!
 
-**Regarding Privacy**
-: I Would like a more Privacy centered world but I use a Google Pixel as my daily driver and Use Windows so moot point!
+**Regarding Privacy and Linux**
+: I Would like a more Privacy centred world but I use a Google Pixel, been using linux since 2018, switched back and forth with windows, since 2022 main streamed Linux, previously used ubuntu, linux mint,debian, mostly arch until mid year of 2026 and now on fedora.
 
 Anything you want to know! Feel free to ask!
