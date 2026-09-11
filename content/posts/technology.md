@@ -3,6 +3,7 @@ title: "Technology"
 description: "The tools and technologies behind my workstation, homelab and website."
 layout: "single"
 slug: "technology"
+aliases: ["/technology/"]
 draft: false
 ---
 

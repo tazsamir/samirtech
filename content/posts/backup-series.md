@@ -3,6 +3,7 @@ title: "Backup Series"
 description: "A practical series about recovering data, designing backups and testing restores."
 layout: "single"
 slug: "backup-series"
+aliases: ["/backup-series/"]
 draft: false
 ---
 
