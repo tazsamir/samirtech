@@ -3,7 +3,9 @@ title: "About me"
 date: 2023-05-07T11:45:50+01:00
 draft: false
 url: "/about/"
-summary: about
+summary: Technical support engineer, homelab builder and Linux enthusiast based in the West Midlands.
+description: Technical support engineer, homelab builder and Linux enthusiast based in the West Midlands.
+keywords: ["technical support", "Linux", "homelab", "Docker"]
 ---
 
 Tahir Samir
@@ -81,4 +83,6 @@ September 2026 - Experimenting with Hermes agent.
 **Regarding Privacy and Linux**
 : I Would like a more Privacy centred world but I use a Google Pixel, been using linux since 2018, switched back and forth with windows, since 2022 main streamed Linux, previously used ubuntu, linux mint,debian, mostly arch until mid year of 2026 and now on fedora.
 
-Anything you want to know! Feel free to ask!
+## Contact
+
+For professional or project-related questions, email [tahir@samirtech.org](mailto:tahir@samirtech.org) or connect with me on [LinkedIn](https://www.linkedin.com/in/taz-samir-318603182/).

@@ -1,9 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on Samirtech</title><link>https://blog.samirtech.org/posts/</link><description>Recent content in Blog on Samirtech</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 10 Sep 2026 17:00:00 +0100</lastBuildDate><atom:link href="https://blog.samirtech.org/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Building a More Useful Homelab with Hermes Agent</title><link>https://blog.samirtech.org/posts/hermes-agent/</link><pubDate>Thu, 10 Sep 2026 17:00:00 +0100</pubDate><guid>https://blog.samirtech.org/posts/hermes-agent/</guid><description>&lt;h1 id="working-with-hermes-agent"&gt;Working with Hermes Agent&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Samirtech</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Blog on Samirtech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2026 17:00:00 +0100</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a More Useful Homelab with Hermes Agent</title>
+      <link>http://localhost:1313/posts/hermes-agent/</link>
+      <pubDate>Thu, 10 Sep 2026 17:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/posts/hermes-agent/</guid>
+      <description>&lt;h1 id=&#34;working-with-hermes-agent&#34;&gt;Working with Hermes Agent&lt;/h1&gt;
 &lt;p&gt;I started experimenting with Hermes Agent in September 2026. It is an AI agent that runs in the terminal and can use tools to inspect files, research documentation, operate on systems and help turn a vague idea into a tested result.&lt;/p&gt;
-&lt;p&gt;The interesting part is not simply asking an AI questions. Hermes can work alongside the systems I already use: Fedora and KDE on the desktop, Docker on the N100, TrueNAS for storage and Telegram for remote status updates. The useful work happens when the agent checks the real system instead of guessing.&lt;/p&gt;</description><content>&lt;h1 id="working-with-hermes-agent"&gt;Working with Hermes Agent&lt;/h1&gt;
+&lt;p&gt;The interesting part is not simply asking an AI questions. Hermes can work alongside the systems I already use: Fedora and KDE on the desktop, Docker on the N100, TrueNAS for storage and Telegram for remote status updates. The useful work happens when the agent checks the real system instead of guessing.&lt;/p&gt;</description>
+      <content>&lt;h1 id=&#34;working-with-hermes-agent&#34;&gt;Working with Hermes Agent&lt;/h1&gt;
 &lt;p&gt;I started experimenting with Hermes Agent in September 2026. It is an AI agent that runs in the terminal and can use tools to inspect files, research documentation, operate on systems and help turn a vague idea into a tested result.&lt;/p&gt;
 &lt;p&gt;The interesting part is not simply asking an AI questions. Hermes can work alongside the systems I already use: Fedora and KDE on the desktop, Docker on the N100, TrueNAS for storage and Telegram for remote status updates. The useful work happens when the agent checks the real system instead of guessing.&lt;/p&gt;
-&lt;h2 id="what-we-have-been-doing"&gt;What we have been doing&lt;/h2&gt;
+&lt;h2 id=&#34;what-we-have-been-doing&#34;&gt;What we have been doing&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Auditing and maintaining the homelab without removing services destructively.&lt;/li&gt;
 &lt;li&gt;Improving local HTTPS and friendly DNS names for services such as Immich, Jellyfin and Audiobookshelf.&lt;/li&gt;
@@ -13,43 +29,65 @@
 &lt;li&gt;Writing reusable skills so hard-won procedures are available in later sessions.&lt;/li&gt;
 &lt;li&gt;Inspecting and improving this website, including the backup learning series and this homelab showcase.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="the-important-habit-verify-everything"&gt;The important habit: verify everything&lt;/h2&gt;
+&lt;h2 id=&#34;the-important-habit-verify-everything&#34;&gt;The important habit: verify everything&lt;/h2&gt;
 &lt;p&gt;An agent should not claim a change worked because a command returned successfully. For system changes, I want a read-back or health check. For backups, I want restore tests. For website changes, I want a real Hugo build and a check of the generated pages.&lt;/p&gt;
 &lt;p&gt;That approach makes Hermes less like a chatbot and more like a careful technical colleague: it can move quickly, but the evidence still comes from the system being changed.&lt;/p&gt;
-&lt;h2 id="what-comes-next"&gt;What comes next&lt;/h2&gt;
-&lt;p&gt;I am continuing to document the lab, add photographs and diagrams, and turn recurring maintenance into small, reviewable workflows. The goal is not to automate everything. It is to make the useful and repetitive parts safer while keeping important decisions visible.&lt;/p&gt;</content></item><item><title>Showcase</title><link>https://blog.samirtech.org/showcase/</link><pubDate>Thu, 10 Sep 2026 17:00:00 +0100</pubDate><guid>https://blog.samirtech.org/showcase/</guid><description>The hardware, services and network design behind my homelab.</description><content>&lt;h1 id="my-homelab"&gt;My homelab&lt;/h1&gt;
+&lt;h2 id=&#34;what-comes-next&#34;&gt;What comes next&lt;/h2&gt;
+&lt;p&gt;I am continuing to document the lab, add photographs and diagrams, and turn recurring maintenance into small, reviewable workflows. The goal is not to automate everything. It is to make the useful and repetitive parts safer while keeping important decisions visible.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Showcase</title>
+      <link>http://localhost:1313/showcase/</link>
+      <pubDate>Thu, 10 Sep 2026 17:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/showcase/</guid>
+      <description>The hardware, services and network design behind my homelab.</description>
+      <content>&lt;h1 id=&#34;my-homelab&#34;&gt;My homelab&lt;/h1&gt;
 &lt;p&gt;This is my personal lab: a small collection of repurposed hardware, storage and networking equipment used to learn, host services and keep important data under my control. It is intentionally practical rather than flashy, with low power use, recoverability and simple maintenance as the priorities.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.samirtech.org/homelab-topology.svg" alt="Homelab topology diagram"&gt;&lt;/p&gt;
-&lt;h2 id="hardware"&gt;Hardware&lt;/h2&gt;
-&lt;h3 id="fractal-node-804"&gt;Fractal Node 804&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/homelab-topology.svg&#34; alt=&#34;Homelab topology diagram&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;hardware&#34;&gt;Hardware&lt;/h2&gt;
+&lt;h3 id=&#34;fractal-node-804&#34;&gt;Fractal Node 804&lt;/h3&gt;
 &lt;p&gt;The Node 804 is my TrueNAS Voyager. It is the second NAS and normally stays powered off or suspended, receiving local replication from Normandy for recovery and protected copies.&lt;/p&gt;
-&lt;h3 id="geekom-n100"&gt;GEEKOM N100&lt;/h3&gt;
+&lt;h3 id=&#34;geekom-n100&#34;&gt;GEEKOM N100&lt;/h3&gt;
 &lt;p&gt;The N100 is the quiet, efficient always-on Docker host. It runs the lightweight services that do not need a full server, including the home proxy, DNS and monitoring tools.&lt;/p&gt;
-&lt;h3 id="hp-enterprise-desktop--truenas-normandy"&gt;HP Enterprise desktop — TrueNAS Normandy&lt;/h3&gt;
+&lt;h3 id=&#34;hp-enterprise-desktop--truenas-normandy&#34;&gt;HP Enterprise desktop — TrueNAS Normandy&lt;/h3&gt;
 &lt;p&gt;The HP Enterprise desktop is my main TrueNAS server, Normandy. It is housed in a two-bay enclosure and runs the live storage, photo library and primary file workloads.&lt;/p&gt;
-&lt;h3 id="dell-micro-pc--proxmox"&gt;Dell Micro PC — Proxmox&lt;/h3&gt;
+&lt;h3 id=&#34;dell-micro-pc--proxmox&#34;&gt;Dell Micro PC — Proxmox&lt;/h3&gt;
 &lt;p&gt;The Dell Micro PC runs Proxmox for virtual machines and experiments. It is currently powered off, so it is available when needed without adding to the always-on power draw.&lt;/p&gt;
-&lt;h3 id="glinet-router"&gt;GL.iNet router&lt;/h3&gt;
+&lt;h3 id=&#34;glinet-router&#34;&gt;GL.iNet router&lt;/h3&gt;
 &lt;p&gt;The GL.iNet router is the network edge for isolated or mobile lab work. It lets me test network changes without exposing the rest of the home network.&lt;/p&gt;
-&lt;h2 id="how-it-fits-together"&gt;How it fits together&lt;/h2&gt;
+&lt;h2 id=&#34;how-it-fits-together&#34;&gt;How it fits together&lt;/h2&gt;
 &lt;p&gt;The main PC and lab machines connect through the home network. The N100 publishes friendly local HTTPS names through Caddy and provides DNS for the services. The NAS stores the important data, while the second NAS, removable storage and encrypted off-site copies provide recovery paths.&lt;/p&gt;
 &lt;p&gt;This is a living setup. Hardware and services change as I learn, but the design goal stays the same: useful services, clear failure boundaries and backups that can actually be restored.&lt;/p&gt;
-&lt;h2 id="coming-next"&gt;Coming next&lt;/h2&gt;
-&lt;p&gt;I will add photographs of each machine, power measurements and a service-by-service inventory as the lab documentation grows.&lt;/p&gt;</content></item><item><title>How I Got My Old Photos Back After Wiping My NAS</title><link>https://blog.samirtech.org/posts/how-i-got-my-old-photos-back/</link><pubDate>Thu, 10 Sep 2026 09:00:00 +0100</pubDate><guid>https://blog.samirtech.org/posts/how-i-got-my-old-photos-back/</guid><description>&lt;p&gt;There are some files you can download again. Family photos are not among them.&lt;/p&gt;
+&lt;h2 id=&#34;coming-next&#34;&gt;Coming next&lt;/h2&gt;
+&lt;p&gt;I will add photographs of each machine, power measurements and a service-by-service inventory as the lab documentation grows.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>How I Got My Old Photos Back After Wiping My NAS</title>
+      <link>http://localhost:1313/posts/how-i-got-my-old-photos-back/</link>
+      <pubDate>Thu, 10 Sep 2026 09:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/posts/how-i-got-my-old-photos-back/</guid>
+      <description>&lt;p&gt;There are some files you can download again. Family photos are not among them.&lt;/p&gt;
 &lt;p&gt;I recently learned that lesson in the most uncomfortable way possible. While moving to a new home, I reset my main TrueNAS server without properly reading what the reset operation would do. The result was that I wiped the system and thought I had lost years of photos and home videos.&lt;/p&gt;
-&lt;p&gt;This included the ordinary moments that become important only after time has passed—old computers, holidays, family pictures and photos of my son. Some of the recovered photos went all the way back to 2009.&lt;/p&gt;</description><content>&lt;p&gt;There are some files you can download again. Family photos are not among them.&lt;/p&gt;
+&lt;p&gt;This included the ordinary moments that become important only after time has passed—old computers, holidays, family pictures and photos of my son. Some of the recovered photos went all the way back to 2009.&lt;/p&gt;</description>
+      <content>&lt;p&gt;There are some files you can download again. Family photos are not among them.&lt;/p&gt;
 &lt;p&gt;I recently learned that lesson in the most uncomfortable way possible. While moving to a new home, I reset my main TrueNAS server without properly reading what the reset operation would do. The result was that I wiped the system and thought I had lost years of photos and home videos.&lt;/p&gt;
 &lt;p&gt;This included the ordinary moments that become important only after time has passed—old computers, holidays, family pictures and photos of my son. Some of the recovered photos went all the way back to 2009.&lt;/p&gt;
 &lt;p&gt;I did eventually get them back, but not because I had a perfect backup system. I got them back because fragments of several old systems still existed and, after a lot of investigation, I managed to piece them together.&lt;/p&gt;
 &lt;p&gt;This is what happened.&lt;/p&gt;
-&lt;h2 id="the-mistake"&gt;The mistake&lt;/h2&gt;
+&lt;h2 id=&#34;the-mistake&#34;&gt;The mistake&lt;/h2&gt;
 &lt;p&gt;My main storage server ran TrueNAS and hosted Immich, my self-hosted photo library. During our move to a new home, I was getting the homelab set up again and used the TrueNAS reset option. I did not stop and read carefully enough to understand exactly what would be reset or what the consequences would be.&lt;/p&gt;
 &lt;p&gt;That mistake wiped the system I was relying on for my photo library. It was not a disk failure, ransomware attack or obscure software bug. It was a destructive action carried out by me during an already busy period, because I assumed I understood the option instead of verifying it first.&lt;/p&gt;
 &lt;p&gt;Moving home meant equipment had been powered down, disconnected and relocated, and I was trying to bring several parts of the network and homelab back online. That context does not change the result, but it explains how easily a familiar-looking reset option turned into a serious data-loss incident.&lt;/p&gt;
 &lt;p&gt;The full impact was not immediately obvious. The server could be rebuilt, containers could be redeployed and applications could be downloaded again. The irreplaceable part was the data: the original photos and videos behind Immich.&lt;/p&gt;
 &lt;p&gt;I had backups—or at least I believed I did.&lt;/p&gt;
 &lt;p&gt;That distinction became important very quickly.&lt;/p&gt;
-&lt;h2 id="a-backup-existing-does-not-mean-it-can-be-restored"&gt;A backup existing does not mean it can be restored&lt;/h2&gt;
+&lt;h2 id=&#34;a-backup-existing-does-not-mean-it-can-be-restored&#34;&gt;A backup existing does not mean it can be restored&lt;/h2&gt;
 &lt;p&gt;I had previously replicated data to a second TrueNAS machine. That sounded reassuring until I discovered that some of the replicated datasets were encrypted and I no longer had the required encryption key.&lt;/p&gt;
 &lt;p&gt;The data was physically present, but parts of it were effectively locked away.&lt;/p&gt;
 &lt;p&gt;I also had cloud backups in Backblaze B2, created using Duplicati. I no longer had the original Duplicati installation, but fortunately I had kept its passphrase. That gave me another possible route back to the files.&lt;/p&gt;
@@ -62,12 +100,12 @@
 &lt;li&gt;a current Immich server that was already receiving new uploads.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;It was not a clean backup. It was an archaeological dig.&lt;/p&gt;
-&lt;h2 id="recovering-the-old-immich-system"&gt;Recovering the old Immich system&lt;/h2&gt;
+&lt;h2 id=&#34;recovering-the-old-immich-system&#34;&gt;Recovering the old Immich system&lt;/h2&gt;
 &lt;p&gt;I restored the older Immich installation on the second TrueNAS server and began checking what was actually there.&lt;/p&gt;
 &lt;p&gt;That first successful login was a major relief. My wife&amp;rsquo;s photos appeared, and the oldest items in the library went back to 2009. Seeing the thumbnails was encouraging, but I did not yet treat that as proof of a successful recovery.&lt;/p&gt;
 &lt;p&gt;An Immich library is more than a folder of images. It also has a PostgreSQL database containing users, albums, metadata and the relationships between assets. A working web interface can still hide missing originals, broken thumbnails or an incomplete database.&lt;/p&gt;
 &lt;p&gt;Before doing more, I created a fresh database dump and ran checks against the restored database. The database appeared healthy, which meant the old instance could become a source for a safer migration.&lt;/p&gt;
-&lt;h2 id="decrypting-and-pulling-the-files-back-from-backblaze"&gt;Decrypting and pulling the files back from Backblaze&lt;/h2&gt;
+&lt;h2 id=&#34;decrypting-and-pulling-the-files-back-from-backblaze&#34;&gt;Decrypting and pulling the files back from Backblaze&lt;/h2&gt;
 &lt;p&gt;The Backblaze copy was not a normal folder that could simply be opened and copied. The files had been uploaded through Duplicati and were stored using its encrypted backup format.&lt;/p&gt;
 &lt;p&gt;That meant the Backblaze bucket contained backup data, not immediately usable JPGs, MP4s and other originals. The encryption passphrase was therefore just as important as the B2 account details. Without it, I might have been looking at a complete cloud backup that I still could not restore.&lt;/p&gt;
 &lt;p&gt;The recovery process was:&lt;/p&gt;
@@ -88,18 +126,18 @@
 &lt;blockquote&gt;
 &lt;p&gt;Copying files is an activity. Verifying that the correct files arrived is the recovery.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id="migrating-into-the-active-immich-server"&gt;Migrating into the active Immich server&lt;/h2&gt;
+&lt;h2 id=&#34;migrating-into-the-active-immich-server&#34;&gt;Migrating into the active Immich server&lt;/h2&gt;
 &lt;p&gt;While I was recovering the old server, my active Immich instance was still receiving new phone uploads. I did not want to replace its database with an old one and risk losing everything added since the failure.&lt;/p&gt;
 &lt;p&gt;Instead, I kept the restored Immich instance as the source and migrated its contents into the active instance using &lt;code&gt;immich-go&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;The migration was not perfectly clean. Early attempts failed because the correct API access had not been configured. Later runs reported missing originals, server errors and thumbnail-related failures. The larger migration also produced many duplicates—which, in this case, was better than silently losing files.&lt;/p&gt;
 &lt;p&gt;I reran the migration and reduced the remaining errors. By the final retries, my own library was down to a single failed upload caused by an empty file, while my wife&amp;rsquo;s migration had a much smaller number of remaining download errors to investigate.&lt;/p&gt;
 &lt;p&gt;Most importantly, the old photographs began appearing in the current Immich mobile app. My wife&amp;rsquo;s library returned, then mine. Some thumbnails still needed to be regenerated, but opening the affected assets showed that many of the originals were present.&lt;/p&gt;
 &lt;p&gt;That was the moment I could finally say: I have my photos back.&lt;/p&gt;
-&lt;h2 id="verifying-that-the-recovery-was-real"&gt;Verifying that the recovery was real&lt;/h2&gt;
+&lt;h2 id=&#34;verifying-that-the-recovery-was-real&#34;&gt;Verifying that the recovery was real&lt;/h2&gt;
 &lt;p&gt;I did not rely only on Immich showing a thumbnail. Some thumbnails initially reported errors even though the original opened when selected. That is why I checked the restored files directly and compared selected files with SHA-256 hashes between the recovered Immich data and a separate restore-test copy.&lt;/p&gt;
 &lt;p&gt;The verification included opening photographs and videos from different years, checking older material rather than only recent uploads, confirming that originals opened outside Immich, checking that the database was healthy, and making sure the active Immich server could display the migrated assets on the phone.&lt;/p&gt;
 &lt;p&gt;This was also how I found that some items from before 2024 had not initially migrated. Seeing a library in the application was not enough; I had to check the timeline and retry the missing material.&lt;/p&gt;
-&lt;h2 id="what-saved-the-photos"&gt;What saved the photos&lt;/h2&gt;
+&lt;h2 id=&#34;what-saved-the-photos&#34;&gt;What saved the photos&lt;/h2&gt;
 &lt;p&gt;No single part of my setup saved me. Recovery was possible because several imperfect layers overlapped:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;the second NAS still held a usable copy of the old Immich installation;&lt;/li&gt;
@@ -110,7 +148,7 @@
 &lt;li&gt;I did not immediately delete the old sources after the first apparent success.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Any one of those could have been the difference between recovery and permanent loss.&lt;/p&gt;
-&lt;h2 id="what-made-it-harder-than-it-needed-to-be"&gt;What made it harder than it needed to be&lt;/h2&gt;
+&lt;h2 id=&#34;what-made-it-harder-than-it-needed-to-be&#34;&gt;What made it harder than it needed to be&lt;/h2&gt;
 &lt;p&gt;I also made nearly every classic backup mistake:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;I had encrypted replicas without being certain the recovery key was safely stored;&lt;/li&gt;
@@ -122,7 +160,7 @@
 &lt;li&gt;cloud download limits slowed recovery at exactly the time I most wanted it to be fast.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The problem was not that I had no backups. The problem was that I did not have a documented, tested recovery path.&lt;/p&gt;
-&lt;h2 id="where-things-stand-now"&gt;Where things stand now&lt;/h2&gt;
+&lt;h2 id=&#34;where-things-stand-now&#34;&gt;Where things stand now&lt;/h2&gt;
 &lt;p&gt;The recovered photos have been migrated into the active Immich server. I have fresh database dumps, and I am keeping the restored server and old backup sets untouched until I have finished verification.&lt;/p&gt;
 &lt;p&gt;There is also a separate collection of older family photographs recovered from a general Backblaze backup. I do not plan to import all of those into Immich. Instead, I will keep selected originals in a dedicated photos dataset so that an application is not the only way to access them.&lt;/p&gt;
 &lt;p&gt;The next job is not glamorous, but it is important:&lt;/p&gt;
@@ -136,19 +174,30 @@
 &lt;li&gt;document the restore procedure and test it.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Only after that will I remove old or inaccessible backup sets.&lt;/p&gt;
-&lt;h2 id="the-lesson"&gt;The lesson&lt;/h2&gt;
+&lt;h2 id=&#34;the-lesson&#34;&gt;The lesson&lt;/h2&gt;
 &lt;p&gt;Before this happened, I thought of backups mainly as copies. Now I think of them as a recoverable system.&lt;/p&gt;
 &lt;p&gt;A backup is not proven because a scheduled job says it completed. It is proven when you can rebuild the service, unlock the data, restore the database, retrieve the original files and confirm that they open.&lt;/p&gt;
 &lt;p&gt;I was lucky. I had enough pieces left to reconstruct years of memories, including photographs I had not seen for a long time. The experience was stressful, slow and sometimes confusing, but it has given me a much clearer idea of how I want to protect my family&amp;rsquo;s data in future.&lt;/p&gt;
-&lt;p&gt;This article is the first in a series about rebuilding my backup strategy properly. Next I will cover why backups matter, what the 3-2-1 rule actually means for a home server, how to back up Immich&amp;rsquo;s media and database together, and the system I am putting in place so that recovering from the next failure does not depend on luck.&lt;/p&gt;</content></item><item><title>About me</title><link>https://blog.samirtech.org/about/</link><pubDate>Sun, 07 May 2023 11:45:50 +0100</pubDate><guid>https://blog.samirtech.org/about/</guid><description>about</description><content>&lt;h1 id="tahir-samir"&gt;Tahir Samir&lt;/h1&gt;
+&lt;p&gt;This article is the first in a series about rebuilding my backup strategy properly. Next I will cover why backups matter, what the 3-2-1 rule actually means for a home server, how to back up Immich&amp;rsquo;s media and database together, and the system I am putting in place so that recovering from the next failure does not depend on luck.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Sun, 07 May 2023 11:45:50 +0100</pubDate>
+      
+      <guid>http://localhost:1313/about/</guid>
+      <description>Technical support engineer, homelab builder and Linux enthusiast based in the West Midlands.</description>
+      <content>&lt;h1 id=&#34;tahir-samir&#34;&gt;Tahir Samir&lt;/h1&gt;
 &lt;hr&gt;
-&lt;p&gt;West Midlands, &lt;br&gt;
+&lt;p&gt;West Midlands,                  &lt;br&gt;
 United Kingdom&lt;/p&gt;
-&lt;p&gt;&lt;a href="mailto:tahir@samirtech.org"&gt;tahir@samirtech.org&lt;/a&gt; &lt;a href="https://www.linkedin.com/in/taz-samir-318603182/"&gt;Linkedin&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;mailto:tahir@samirtech.org&#34;&gt;tahir@samirtech.org&lt;/a&gt;                        &lt;a href=&#34;https://www.linkedin.com/in/taz-samir-318603182/&#34;&gt;Linkedin&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id="education"&gt;Education&lt;/h2&gt;
+&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;
 &lt;p&gt;Went to High School, and College, then tried University but preferred real experience.&lt;/p&gt;
-&lt;h2 id="experience"&gt;Experience&lt;/h2&gt;
+&lt;h2 id=&#34;experience&#34;&gt;Experience&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Flexera&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;2022-Present&lt;/p&gt;
 &lt;p&gt;Senior Technical Support Engineer&lt;/p&gt;
@@ -181,7 +230,7 @@ United Kingdom&lt;/p&gt;
 &lt;li&gt;Supported software from internal, to Office, Windows XP to Windows 10&lt;/li&gt;
 &lt;li&gt;Provided training, and conducted interviews for new starters&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="technical-experience"&gt;Technical Experience&lt;/h2&gt;
+&lt;h2 id=&#34;technical-experience&#34;&gt;Technical Experience&lt;/h2&gt;
 &lt;p&gt;I have Been using Computers since Windows 3.1 (I have older siblings)
 Got really into technology, when my high school provided a computer - 2004/2005, we shared it, I broke it several times, by installing crap-ware/not knowing how to manage a computer as a teenager, I learned a lot. Got into console gaming and fixing computers, gadgets since the PSP days!
 I have built several computers, my first was a AMD Phenom and my latest is a AMD 5800 (I have built several Intel machines). I own Raspberry Pi&amp;rsquo;s and micro pc&amp;rsquo;s and old consoles/handhelds, i don&amp;rsquo;t game often.&lt;/p&gt;
@@ -207,7 +256,24 @@ September 2026 - Experimenting with Hermes agent.&lt;/li&gt;
 &lt;dt&gt;&lt;strong&gt;Regarding Privacy and Linux&lt;/strong&gt;&lt;/dt&gt;
 &lt;dd&gt;I Would like a more Privacy centred world but I use a Google Pixel, been using linux since 2018, switched back and forth with windows, since 2022 main streamed Linux, previously used ubuntu, linux mint,debian, mostly arch until mid year of 2026 and now on fedora.&lt;/dd&gt;
 &lt;/dl&gt;
-&lt;p&gt;Anything you want to know! Feel free to ask!&lt;/p&gt;</content></item><item><title>Hello World</title><link>https://blog.samirtech.org/posts/hello-world/</link><pubDate>Sun, 07 May 2023 00:17:50 +0100</pubDate><guid>https://blog.samirtech.org/posts/hello-world/</guid><description>The first note on Samirtech.</description><content>&lt;h1 id="hello-world"&gt;Hello world&lt;/h1&gt;
-&lt;h2 id="welcome-to-my-first-post"&gt;Welcome to my first post&lt;/h2&gt;
-&lt;p&gt;&lt;img src="bracknell-capitol-building.jpg" alt="office"&gt;&lt;/p&gt;
-&lt;p&gt;I hope to be adding more entries here. Please stay tuned.&lt;/p&gt;</content></item></channel></rss>
+&lt;h2 id=&#34;contact&#34;&gt;Contact&lt;/h2&gt;
+&lt;p&gt;For professional or project-related questions, email &lt;a href=&#34;mailto:tahir@samirtech.org&#34;&gt;tahir@samirtech.org&lt;/a&gt; or connect with me on &lt;a href=&#34;https://www.linkedin.com/in/taz-samir-318603182/&#34;&gt;LinkedIn&lt;/a&gt;.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>http://localhost:1313/posts/hello-world/</link>
+      <pubDate>Sun, 07 May 2023 00:17:50 +0100</pubDate>
+      
+      <guid>http://localhost:1313/posts/hello-world/</guid>
+      <description>The first note on Samirtech.</description>
+      <content>&lt;h1 id=&#34;hello-world&#34;&gt;Hello world&lt;/h1&gt;
+&lt;h2 id=&#34;welcome-to-my-first-post&#34;&gt;Welcome to my first post&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;bracknell-capitol-building.jpg&#34; alt=&#34;office&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I hope to be adding more entries here. Please stay tuned.&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

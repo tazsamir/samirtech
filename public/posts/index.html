@@ -1,9 +1,388 @@
-<!doctype html><html lang=en><head><title>Blog :: Samirtech</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://blog.samirtech.org/posts/><link rel=stylesheet href=https://blog.samirtech.org/styles.css><link rel="shortcut icon" href=https://blog.samirtech.org/img/theme-colors/red.png><link rel=apple-touch-icon href=https://blog.samirtech.org/img/theme-colors/red.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="en"><meta property="og:type" content="website"><meta property="og:title" content="Blog"><meta property="og:description" content><meta property="og:url" content="https://blog.samirtech.org/posts/"><meta property="og:site_name" content="Samirtech"><meta property="og:image" content="https://blog.samirtech.org/img/favicon/red.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/posts/index.xml rel=alternate type=application/rss+xml title=Samirtech></head><body class=red><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=https://samirtech.org><div class=logo>Samirtech</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>About</a></li><li><a href=/>Blog</a></li><li><a href=/showcase>Showcase</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>About</a></li><li><a href=/>Blog</a></li><li><ul class=menu><li class=menu__trigger>&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/showcase>Showcase</a></li></ul></li></ul></li></ul></nav></header><div class=content><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://blog.samirtech.org/posts/hermes-agent/>Building a More Useful Homelab with Hermes Agent</a></h1><div class=post-meta><time class=post-date>2026-09-10 ::</time></div><span class=post-tags>#<a href=https://blog.samirtech.org/tags/hermes-agent/>hermes-agent</a>&nbsp;
-#<a href=https://blog.samirtech.org/tags/linux/>linux</a>&nbsp;
-#<a href=https://blog.samirtech.org/tags/homelab/>homelab</a>&nbsp;
-#<a href=https://blog.samirtech.org/tags/automation/>automation</a>&nbsp;</span><div class=post-content>How I have been using Hermes Agent to document, maintain and improve my Linux workstation and homelab.</div><div><a class="read-more button" href=/posts/hermes-agent/>→</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://blog.samirtech.org/showcase/>Showcase</a></h1><div class=post-meta><time class=post-date>2026-09-10 ::</time></div><div class=post-content>A practical homelab built from quiet, second-hand and low-power hardware.</div><div><a class="read-more button" href=/showcase/>→</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://blog.samirtech.org/posts/how-i-got-my-old-photos-back/>How I Got My Old Photos Back After Wiping My NAS</a></h1><div class=post-meta><time class=post-date>2026-09-10 ::</time></div><span class=post-tags>#<a href=https://blog.samirtech.org/tags/homelab/>homelab</a>&nbsp;
-#<a href=https://blog.samirtech.org/tags/backups/>backups</a>&nbsp;
-#<a href=https://blog.samirtech.org/tags/data-recovery/>data-recovery</a>&nbsp;
-#<a href=https://blog.samirtech.org/tags/truenas/>truenas</a>&nbsp;
-#<a href=https://blog.samirtech.org/tags/immich/>immich</a>&nbsp;</span><div class=post-content>I accidentally wiped my main TrueNAS server and thought years of family photos were gone. This is how I recovered them from a messy collection of replicas, cloud backups and an old Immich installation.</div><div><a class="read-more button" href=/posts/how-i-got-my-old-photos-back/>→</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://blog.samirtech.org/about/>About me</a></h1><div class=post-meta><time class=post-date>2023-05-07 ::</time></div><div class=post-content>about</div><div><a class="read-more button" href=/about/>→</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://blog.samirtech.org/posts/hello-world/>Hello World</a></h1><div class=post-meta><time class=post-date>2023-05-07 ::</time></div><div class=post-content>The first note on Samirtech: a personal space for Linux, homelab projects and practical technology.</div><div><a class="read-more button" href=/posts/hello-world/>→</a></div></article><div class=pagination><div class=pagination__buttons></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2026 Powered by <a href=http://gohugo.io>Hugo</a></span>
-<span>:: <a href=https://github.com/panr/hugo-theme-terminal target=_blank>Theme</a> made by <a href=https://github.com/panr target=_blank>panr</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>Blog :: Samirtech</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="" />
+<meta name="keywords" content="[homelab Linux Docker self-hosting technical support backups]" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="http://localhost:1313/posts/" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="http://localhost:1313/img/theme-colors/green.png">
+  <link rel="apple-touch-icon" href="http://localhost:1313/img/theme-colors/green.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Blog">
+<meta property="og:description" content="" />
+<meta property="og:url" content="http://localhost:1313/posts/" />
+<meta property="og:site_name" content="Samirtech" />
+
+  
+    <meta property="og:image" content="http://localhost:1313/img/favicon/green.png">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+
+
+
+  <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Samirtech" />
+
+
+
+
+
+
+
+
+
+</head>
+<body class="green">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="https://samirtech.org">
+  <div class="logo">
+    Samirtech
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/">Blog</a></li>
+        
+      
+        
+          <li><a href="/about/#contact">Contact</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about" >About</a></li>
+        
+      
+        
+          <li><a href="/" >Blog</a></li>
+        
+      
+      
+        <li>
+          <ul class="menu">
+            <li class="menu__trigger">&nbsp;▾</li>
+            <li>
+              <ul class="menu__dropdown">
+                
+                  
+                    <li><a href="/about/#contact" >Contact</a></li>
+                  
+                
+                  
+                    <li><a href="/showcase" >Showcase</a></li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+  
+  <div class="posts">
+    
+      <article class="post on-list">
+        <h1 class="post-title">
+          <a href="http://localhost:1313/posts/hermes-agent/">Building a More Useful Homelab with Hermes Agent</a>
+        </h1>
+        <div class="post-meta">
+          
+            <time class="post-date">
+              2026-09-10 ::
+            </time>
+          
+          
+        </div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="http://localhost:1313/tags/hermes-agent/">hermes-agent</a>&nbsp;
+            
+            #<a href="http://localhost:1313/tags/linux/">linux</a>&nbsp;
+            
+            #<a href="http://localhost:1313/tags/homelab/">homelab</a>&nbsp;
+            
+            #<a href="http://localhost:1313/tags/automation/">automation</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            How I have been using Hermes Agent to document, maintain and improve my Linux workstation and homelab.
+          
+        </div>
+
+        
+          <div>
+            <a class="read-more button" href="/posts/hermes-agent/"> →</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h1 class="post-title">
+          <a href="http://localhost:1313/showcase/">Showcase</a>
+        </h1>
+        <div class="post-meta">
+          
+            <time class="post-date">
+              2026-09-10 ::
+            </time>
+          
+          
+        </div>
+
+        
+
+        
+
+
+        <div class="post-content">
+          
+            A practical homelab built from quiet, second-hand and low-power hardware.
+          
+        </div>
+
+        
+          <div>
+            <a class="read-more button" href="/showcase/"> →</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h1 class="post-title">
+          <a href="http://localhost:1313/posts/how-i-got-my-old-photos-back/">How I Got My Old Photos Back After Wiping My NAS</a>
+        </h1>
+        <div class="post-meta">
+          
+            <time class="post-date">
+              2026-09-10 ::
+            </time>
+          
+          
+        </div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="http://localhost:1313/tags/homelab/">homelab</a>&nbsp;
+            
+            #<a href="http://localhost:1313/tags/backups/">backups</a>&nbsp;
+            
+            #<a href="http://localhost:1313/tags/data-recovery/">data-recovery</a>&nbsp;
+            
+            #<a href="http://localhost:1313/tags/truenas/">truenas</a>&nbsp;
+            
+            #<a href="http://localhost:1313/tags/immich/">immich</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            I accidentally wiped my main TrueNAS server and thought years of family photos were gone. This is how I recovered them from a messy collection of replicas, cloud backups and an old Immich installation.
+          
+        </div>
+
+        
+          <div>
+            <a class="read-more button" href="/posts/how-i-got-my-old-photos-back/"> →</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h1 class="post-title">
+          <a href="http://localhost:1313/about/">About me</a>
+        </h1>
+        <div class="post-meta">
+          
+            <time class="post-date">
+              2023-05-07 ::
+            </time>
+          
+          
+        </div>
+
+        
+
+        
+
+
+        <div class="post-content">
+          
+            Technical support engineer, homelab builder and Linux enthusiast based in the West Midlands.
+          
+        </div>
+
+        
+          <div>
+            <a class="read-more button" href="/about/"> →</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h1 class="post-title">
+          <a href="http://localhost:1313/posts/hello-world/">Hello World</a>
+        </h1>
+        <div class="post-meta">
+          
+            <time class="post-date">
+              2023-05-07 ::
+            </time>
+          
+          
+        </div>
+
+        
+
+        
+
+
+        <div class="post-content">
+          
+            The first note on Samirtech: a personal space for Linux, homelab projects and practical technology.
+          
+        </div>
+
+        
+          <div>
+            <a class="read-more button" href="/posts/hello-world/"> →</a>
+          </div>
+        
+      </article>
+    
+
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+    
+  </div>
+</div>
+
+  </div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2026 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

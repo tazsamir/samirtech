@@ -1,9 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hermes-Agent on Samirtech</title><link>https://blog.samirtech.org/tags/hermes-agent/</link><description>Recent content in Hermes-Agent on Samirtech</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 10 Sep 2026 17:00:00 +0100</lastBuildDate><atom:link href="https://blog.samirtech.org/tags/hermes-agent/index.xml" rel="self" type="application/rss+xml"/><item><title>Building a More Useful Homelab with Hermes Agent</title><link>https://blog.samirtech.org/posts/hermes-agent/</link><pubDate>Thu, 10 Sep 2026 17:00:00 +0100</pubDate><guid>https://blog.samirtech.org/posts/hermes-agent/</guid><description>&lt;h1 id="working-with-hermes-agent"&gt;Working with Hermes Agent&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hermes-Agent on Samirtech</title>
+    <link>http://localhost:1313/tags/hermes-agent/</link>
+    <description>Recent content in Hermes-Agent on Samirtech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2026 17:00:00 +0100</lastBuildDate><atom:link href="http://localhost:1313/tags/hermes-agent/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a More Useful Homelab with Hermes Agent</title>
+      <link>http://localhost:1313/posts/hermes-agent/</link>
+      <pubDate>Thu, 10 Sep 2026 17:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/posts/hermes-agent/</guid>
+      <description>&lt;h1 id=&#34;working-with-hermes-agent&#34;&gt;Working with Hermes Agent&lt;/h1&gt;
 &lt;p&gt;I started experimenting with Hermes Agent in September 2026. It is an AI agent that runs in the terminal and can use tools to inspect files, research documentation, operate on systems and help turn a vague idea into a tested result.&lt;/p&gt;
-&lt;p&gt;The interesting part is not simply asking an AI questions. Hermes can work alongside the systems I already use: Fedora and KDE on the desktop, Docker on the N100, TrueNAS for storage and Telegram for remote status updates. The useful work happens when the agent checks the real system instead of guessing.&lt;/p&gt;</description><content>&lt;h1 id="working-with-hermes-agent"&gt;Working with Hermes Agent&lt;/h1&gt;
+&lt;p&gt;The interesting part is not simply asking an AI questions. Hermes can work alongside the systems I already use: Fedora and KDE on the desktop, Docker on the N100, TrueNAS for storage and Telegram for remote status updates. The useful work happens when the agent checks the real system instead of guessing.&lt;/p&gt;</description>
+      <content>&lt;h1 id=&#34;working-with-hermes-agent&#34;&gt;Working with Hermes Agent&lt;/h1&gt;
 &lt;p&gt;I started experimenting with Hermes Agent in September 2026. It is an AI agent that runs in the terminal and can use tools to inspect files, research documentation, operate on systems and help turn a vague idea into a tested result.&lt;/p&gt;
 &lt;p&gt;The interesting part is not simply asking an AI questions. Hermes can work alongside the systems I already use: Fedora and KDE on the desktop, Docker on the N100, TrueNAS for storage and Telegram for remote status updates. The useful work happens when the agent checks the real system instead of guessing.&lt;/p&gt;
-&lt;h2 id="what-we-have-been-doing"&gt;What we have been doing&lt;/h2&gt;
+&lt;h2 id=&#34;what-we-have-been-doing&#34;&gt;What we have been doing&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Auditing and maintaining the homelab without removing services destructively.&lt;/li&gt;
 &lt;li&gt;Improving local HTTPS and friendly DNS names for services such as Immich, Jellyfin and Audiobookshelf.&lt;/li&gt;
@@ -13,8 +29,13 @@
 &lt;li&gt;Writing reusable skills so hard-won procedures are available in later sessions.&lt;/li&gt;
 &lt;li&gt;Inspecting and improving this website, including the backup learning series and this homelab showcase.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="the-important-habit-verify-everything"&gt;The important habit: verify everything&lt;/h2&gt;
+&lt;h2 id=&#34;the-important-habit-verify-everything&#34;&gt;The important habit: verify everything&lt;/h2&gt;
 &lt;p&gt;An agent should not claim a change worked because a command returned successfully. For system changes, I want a read-back or health check. For backups, I want restore tests. For website changes, I want a real Hugo build and a check of the generated pages.&lt;/p&gt;
 &lt;p&gt;That approach makes Hermes less like a chatbot and more like a careful technical colleague: it can move quickly, but the evidence still comes from the system being changed.&lt;/p&gt;
-&lt;h2 id="what-comes-next"&gt;What comes next&lt;/h2&gt;
-&lt;p&gt;I am continuing to document the lab, add photographs and diagrams, and turn recurring maintenance into small, reviewable workflows. The goal is not to automate everything. It is to make the useful and repetitive parts safer while keeping important decisions visible.&lt;/p&gt;</content></item></channel></rss>
+&lt;h2 id=&#34;what-comes-next&#34;&gt;What comes next&lt;/h2&gt;
+&lt;p&gt;I am continuing to document the lab, add photographs and diagrams, and turn recurring maintenance into small, reviewable workflows. The goal is not to automate everything. It is to make the useful and repetitive parts safer while keeping important decisions visible.&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

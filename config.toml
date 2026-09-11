@@ -1,6 +1,8 @@
-baseurl = "https://blog.samirtech.org/"
+baseurl = "https://samirtech.org/"
 languageCode = "en-us"
 theme = "terminal"
+title = "Samirtech"
+enableRobotsTXT = true
 [pagination]
   pagerSize = 5
 
@@ -10,7 +12,10 @@ theme = "terminal"
   contentTypeName = "posts"
 
   # ["orange", "blue", "red", "green", "pink"]
-  themeColor = "red"
+  themeColor = "green"
+  subtitle = "Technical support, homelab, Linux and practical self-hosting notes from Tahir Samir."
+  description = "Technical support, homelab, Linux and practical self-hosting notes from Tahir Samir."
+  keywords = ["homelab", "Linux", "Docker", "self-hosting", "technical support", "backups"]
 
   # if you set this to 0, only submenu trigger will be visible
   showMenuItems = 2
@@ -71,6 +76,10 @@ theme = "terminal"
         identifier = "showcase"
         name = "Showcase"
         url = "/showcase"
+      [[languages.en.menu.main]]
+        identifier = "contact"
+        name = "Contact"
+        url = "/about/#contact"
       [[languages.en.menu.main]]
         identifier = "blog"
         name = "Blog"
