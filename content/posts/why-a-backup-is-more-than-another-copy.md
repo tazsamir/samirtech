@@ -1,6 +1,6 @@
 ---
 title: "Why a Backup Is More Than Just Another Copy"
-date: 2026-09-11T09:00:00+01:00
+date: 2026-09-11T07:25:00+01:00
 draft: false
 description: "Recovering my family photos taught me that a backup is only useful when it can be unlocked, restored and verified."
 tags: [backups, homelab, data-recovery]
