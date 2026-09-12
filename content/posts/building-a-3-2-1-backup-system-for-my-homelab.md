@@ -1,6 +1,6 @@
 ---
 title: "Building a 3-2-1 Backup System for My Homelab"
-date: 2026-09-12T09:00:00+01:00
+date: 2026-09-12T12:10:00+01:00
 draft: false
 description: "The practical 3-2-1 backup plan I am building after recovering my photos from a wiped TrueNAS server."
 tags: [backups, homelab, truenas, 321-backup]
