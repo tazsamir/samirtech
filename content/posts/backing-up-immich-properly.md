@@ -10,7 +10,7 @@ series_order: 4
 
 Immich makes a self-hosted photo library feel simple, but the backup is more than the visible photo folders.
 
-My recovery showed that I needed to protect three related things: the original media, the PostgreSQL database and the credentials/keys required to access the backup.
+My recovery showed that I needed to protect more than the visible photo library. I need to protect the original media, the PostgreSQL database, the Immich application configuration and the credentials or keys required to access the backup.
 
 ## Original media
 
@@ -24,7 +24,17 @@ The database contains users, albums, metadata and the relationships between asse
 
 During recovery I created a PostgreSQL dump and checked the restored database. I also kept the restored Immich installation available as a source while migrating into the active server.
 
-The database backup must be scheduled, retained and tested. A dump that has never been restored is an assumption, not proof.
+The database must be backed up separately from the media. A dump that has never been restored is an assumption, not proof.
+
+## How the backup layers fit together
+
+The live Immich installation stores the original media and PostgreSQL data as separate parts of the system. They must be treated as one recovery set, even though they are backed up differently.
+
+Local TrueNAS copies provide a nearby recovery route when the primary storage or an individual service fails. They are useful for fast recovery, but they are not protection from every failure: both systems may be affected by the same mistake, physical event or missing encryption key.
+
+The off-site copy is encrypted and stored in Backblaze B2 through Duplicati. This is the important disaster-recovery layer. It is not a normal folder that can simply be browsed; Duplicati must read the backup using the correct configuration and passphrase before it produces ordinary recovered files.
+
+The wider server configuration is backed up separately with Restic. That backup helps rebuild the host, containers and supporting services, but it is not a substitute for backing up the Immich originals and PostgreSQL data.
 
 ## Encryption keys and passphrases
 
