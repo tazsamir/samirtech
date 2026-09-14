@@ -40,7 +40,7 @@ Snapshots are useful for accidental deletion, corruption or a recent change, but
 
 There is also an enabled encrypted cloud-sync task for Immich. It pushes a copy to Backblaze B2 each day and creates a source snapshot as part of the transfer. This gives the photo library an off-site copy while keeping the transfer separate from the local snapshot schedule.
 
-A separate cloud-sync restore test exists but is currently disabled. That is an important distinction: having a configured off-site backup is not the same as regularly proving that it can be restored. I need to enable or manually perform a controlled restore test, using a separate recovery location and without writing over the live library.
+The restore test confirmed that the encrypted cloud copy could be recovered successfully. The test task is now disabled because it served its purpose; future restores should still be performed in a separate recovery location without writing over the live library.
 
 The off-site copy is encrypted and stored in Backblaze B2 through the TrueNAS cloud-sync task. It is not a normal folder that can simply be browsed; recovery requires the correct protected configuration and encryption credentials before it produces ordinary recovered files.
 
