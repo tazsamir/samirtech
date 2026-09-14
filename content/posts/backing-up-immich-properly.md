@@ -32,13 +32,23 @@ The live Immich installation stores the original media and PostgreSQL data as se
 
 Local TrueNAS copies provide a nearby recovery route when the primary storage or an individual service fails. They are useful for fast recovery, but they are not protection from every failure: both systems may be affected by the same mistake, physical event or missing encryption key.
 
-The off-site copy is encrypted and stored in Backblaze B2 through Duplicati. This is the important disaster-recovery layer. It is not a normal folder that can simply be browsed; Duplicati must read the backup using the correct configuration and passphrase before it produces ordinary recovered files.
+## Snapshots and cloud sync
+
+The Immich storage has an enabled recursive TrueNAS snapshot task. It runs hourly and retains snapshots for two weeks. The snapshots use a dedicated naming pattern, making them easier to identify during recovery.
+
+Snapshots are useful for accidental deletion, corruption or a recent change, but they are not a complete backup. They remain on the same storage system and can be lost with the pool, hardware or encryption key. They also do not replace a tested database restore.
+
+There is also an enabled encrypted cloud-sync task for Immich. It pushes a copy to Backblaze B2 each day and creates a source snapshot as part of the transfer. This gives the photo library an off-site copy while keeping the transfer separate from the local snapshot schedule.
+
+A separate cloud-sync restore test exists but is currently disabled. That is an important distinction: having a configured off-site backup is not the same as regularly proving that it can be restored. I need to enable or manually perform a controlled restore test, using a separate recovery location and without writing over the live library.
+
+The off-site copy is encrypted and stored in Backblaze B2 through the TrueNAS cloud-sync task. It is not a normal folder that can simply be browsed; recovery requires the correct protected configuration and encryption credentials before it produces ordinary recovered files.
 
 The wider server configuration is backed up separately with Restic. That backup helps rebuild the host, containers and supporting services, but it is not a substitute for backing up the Immich originals and PostgreSQL data.
 
 ## Encryption keys and passphrases
 
-My recovery involved two different encryption issues. Some TrueNAS-replicated datasets could not be opened because the required TrueNAS key was missing. The Backblaze copy was recoverable because I still had the Duplicati encryption passphrase.
+My recovery involved two different encryption issues. Some TrueNAS-replicated datasets could not be opened because the required TrueNAS key was missing. The off-site cloud copy was recoverable because I still had the required encryption credentials.
 
 The lesson is straightforward: store dataset keys, backup passphrases, B2 credentials and administrator recovery details outside the NAS. Keep more than one protected copy and make sure the recovery instructions explain which key belongs to which system.
 
