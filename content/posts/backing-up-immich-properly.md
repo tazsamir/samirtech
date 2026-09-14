@@ -1,6 +1,6 @@
 ---
 title: "Backing Up Immich Properly: Photos, Database and Encryption Keys"
-date: 2026-09-14T09:00:00+01:00
+date: 2026-09-14T08:00:00+01:00
 draft: false
 description: "What I learned about backing up an Immich installation after rebuilding one from recovered media and database data."
 tags: [immich, backups, truenas, databases]
