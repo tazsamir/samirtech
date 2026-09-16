@@ -1,0 +1,37 @@
+SAMIRTECH / THE HOMELAB
+=======================
+Services · Storage · Recovery
+(quiet, low-power, restore-first)
+=======================
+
+  [ GEEKOM N100 ]
+  [ Always-on Docker host ]
+  [ Caddy • DNS • monitoring ]
+  [ (services) ]
+  |
+  [ Main TrueNAS ]
+  [ HP Enterprise desktop ]
+  [ Live files and photo library ]
+  [ (primary storage) ]
+  |
+  --- replication link ---
+  |
+  [ Second TrueNAS ]
+  [ Fractal Node 804 ]
+  [ Recovery destination ]
+  [ (usually off/sleep) ]
+
+  [ Raspberry Pi 4 ]
+  [ Encrypted Restic repository ]
+  [ Sample restores verified ]
+  [ Remote-location test pending ]
+
+  [ Dell Micro PC ]
+  [ Proxmox virtual machines ]
+  [ Powered off until needed ]
+
+  [ GL.iNet router ]
+  [ Isolated or mobile lab work ]
+  [ Not part of main network ]
+=======================
+Hardware and roles — not physical wiring
