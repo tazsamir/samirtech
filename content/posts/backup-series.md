@@ -15,8 +15,9 @@ A backup is useful when it can be found, unlocked, restored and verified. This s
 2. [Why a Backup Is More Than Just Another Copy](/posts/why-a-backup-is-more-than-another-copy/)
 3. [Building a 3-2-1 Backup System for My Homelab](/posts/building-a-3-2-1-backup-system-for-my-homelab/)
 4. [Backing Up Immich Properly](/posts/backing-up-immich-properly/)
-5. [Using a Second NAS and an Off-Site Raspberry Pi](/posts/using-a-second-nas-and-an-off-site-raspberry-pi/)
-6. [Testing a Restore Before Disaster Strikes](/posts/testing-a-restore-before-disaster-strikes/)
+5. [Testing a Restore Before Disaster Strikes](/posts/testing-a-restore-before-disaster-strikes/)
+6. [Using a Second NAS and an Off-Site Raspberry Pi](/posts/using-a-second-nas-and-an-off-site-raspberry-pi/)
 7. [What I Would Do Differently If I Started Again](/posts/what-i-would-do-differently-if-i-started-again/)
+8. [How My Restic Backup Protects the Homelab](/posts/how-my-restic-backup-protects-the-homelab/)
 
 The series will grow as I test restores, improve the off-site copy and document what actually works.

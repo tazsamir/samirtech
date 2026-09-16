@@ -35,6 +35,12 @@ The Dell Micro PC runs Proxmox for virtual machines and experiments. It is curre
 
 The GL.iNet router is the network edge for isolated or mobile lab work. It lets me test network changes without exposing the rest of the home network.
 
+### Raspberry Pi 4 — additional backup destination
+
+The Pi holds an encrypted Restic repository for selected important files and copied configuration snapshots. A picture and Docker-project files have been restored and verified from it. It is intended for a separate location; remote-location connectivity is not established by those local tests.
+
+[Read the implementation and restore evidence](/posts/using-a-second-nas-and-an-off-site-raspberry-pi/).
+
 ## How it fits together
 
 The main PC and lab machines connect through the home network. The N100 publishes friendly local HTTPS names through Caddy and provides DNS for the services. The NAS stores the important data, while the second NAS, removable storage and encrypted off-site copies provide recovery paths.

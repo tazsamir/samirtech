@@ -1,8 +1,9 @@
 ---
 title: "Building a 3-2-1 Backup System for My Homelab"
 date: 2026-09-12T12:10:00+01:00
+lastmod: 2026-09-16T03:00:00+01:00
 draft: false
-description: "The practical 3-2-1 backup plan I am building after recovering my photos from a wiped TrueNAS server."
+description: "How local snapshots, encrypted cloud backups and a Raspberry Pi fit together, and which recovery tests have actually passed."
 tags: [backups, homelab, truenas, 321-backup]
 series: ["Learning Backups the Hard Way"]
 series_order: 3
@@ -10,48 +11,67 @@ series_order: 3
 
 After recovering my photos, I needed a backup design that did not depend on luck. The familiar 3-2-1 rule gives me a useful structure:
 
-- 3 copies of important data;
-- 2 different storage types or locations;
-- 1 copy off-site.
+- **3 copies** of important data, including the working copy;
+- **2 different media or storage types**, rather than every copy depending on the same storage system;
+- **1 copy off-site**, outside the same physical failure zone.
 
-It is not a magic formula, but it forces me to think about failure scenarios instead of trusting one NAS.
+The numbers are a starting point, not proof of recoverability. Another folder on the same NAS is not an independent backup, and another machine in the same house is not an off-site copy.
 
-## My current layout
+## What is working now
 
-Normandy is my active TrueNAS server and runs the live Immich library. Its data is stored under the `Shepard` dataset, including the Immich data and PostgreSQL data.
+**Documentation updated: 16 September 2026.** This summary reflects the completed checks recorded in the linked articles and the 15 September configuration-backup check. It is not a new full recovery test.
 
-Voyager is the second TrueNAS machine. It normally stays powered off or suspended, and receives local ZFS replication. That protects against some failures, but it is not enough on its own: a mistake, fire, theft or an encryption-key problem could affect both the data and the ability to recover it.
+- **Immich:** original media and PostgreSQL data are separate parts of the live service. Both matter to recovery.
+- **Local snapshots:** the documented Immich snapshot task runs hourly and retains snapshots for two weeks. These provide rollback on the same storage system, not protection from losing that system.
+- **Encrypted cloud backup:** the documented daily TrueNAS cloud-sync task pushes Immich data to Backblaze B2 and creates a source snapshot. An encrypted cloud recovery test completed successfully.
+- **Host configuration:** a weekly Restic job backs up the Docker host's configuration and selected application data to TrueNAS. The destination mount, repository structure and retrieval of a backed-up Compose file were checked.
+- **Raspberry Pi:** the initial selected-data backup completed, and a picture and Docker-project files were restored and verified from its encrypted Restic repository.
 
-I also have removable storage used for protected keys and configuration archives. The long-term off-site plan is an encrypted copy at Backblaze B2 and an incremental copy to a Raspberry Pi 4 with attached storage at my parents' home.
+The Pi is intended for a separate location. The completed tests do **not** establish connectivity after relocation. Calling it an off-site design must not imply that the remote-location test has already happened.
 
-## The three copies
+## How the layers fit together
 
-The first copy is the live data on Normandy. The second is Voyager, which is a separate NAS and receives replicated data. The third will be off-site, using encrypted cloud storage and/or the Pi 4 copy.
+```text
+Live photo service
+  ├─ Original media + PostgreSQL data
+  ├─ Local snapshots: short-term rollback on the same storage
+  └─ Encrypted cloud copy: an independent off-site recovery route
 
-The off-site copy matters because the two NAS machines are still in the same home. It protects against events that local replication cannot.
+Docker host
+  └─ Weekly configuration/application-data snapshots → TrueNAS Restic repository
 
-## Different storage and failure modes
+Selected NAS files + existing configuration snapshots
+  └─ Daily Pi job → encrypted Restic repository
+                     remote-location connectivity still to be tested
+```
 
-Two TrueNAS systems provide useful redundancy, but they are still similar systems managed by the same person. That is why the design also includes cloud storage and removable/off-site media.
+These branches do not all contain the same data. A successful host-configuration backup is not evidence that the entire photo library or a fresh, consistent database dump is included. The Pi copies existing configuration snapshots; it does not make those snapshots newer.
 
-The copies should not all be online and writable at the same time. Voyager is normally off, and offline key storage gives me a recovery route if the online systems are compromised or accidentally changed.
+## The second NAS has a separate role
+
+A second TrueNAS machine provides a local recovery destination and has been used during recovery. It normally stays powered off or suspended. Local replication belongs in the design, but I should not describe it as a current scheduled recovery guarantee without checking its enabled tasks, scope and latest successful runs.
+
+Two NAS machines in one home still share risks: fire, theft, power problems and mistakes made with the same administrator access. Replication also needs an appropriate retention policy; propagating a change is not the same as preserving a recoverable older version.
 
 ## Keys are part of the backup
 
-The recovery taught me that TrueNAS encryption keys and Duplicati/B2 passphrases must be backed up separately from the data. I have placed protected copies in a password manager and created encrypted archives on two USB drives.
+The recovery taught me that dataset keys and backup passphrases must be stored separately from the data they unlock. Protected copies belong in more than one secure place, including a recovery route that does not depend on the failed server.
 
-The USB drives are not the main backup. They hold the information required to unlock and rebuild the real backups.
+Removable key storage is not another full data backup. It holds information required to unlock and rebuild the actual backups. Repository encryption also does not make a destination immutable: an authorized client may still be able to delete or damage it.
 
-## The plan
+## What the tests prove—and what they do not
 
-My practical plan is:
+The completed cloud recovery and Pi sample restores are useful evidence. They show that those tested copies could be accessed, decrypted and recovered at the time of the tests.
 
-1. Keep Normandy as the live service.
-2. Replicate important datasets to Voyager on a schedule.
-3. Keep Voyager powered off or suspended when it is not being used.
-4. Back up Immich media, database dumps and configuration data to encrypted off-site storage.
-5. Build the Pi 4 off-site copy and make it incremental over Wi-Fi.
-6. Test restores and record the procedure.
+They do not establish a complete replacement-server recovery, a fresh end-to-end Immich database restore from every backup destination, or reliable operation after moving the Pi. A structural repository check is also different from reading every stored data block.
 
-The most important change is that every layer has a documented purpose. If one copy fails, I should know which copy to use next and what keys or software are required.
+My next confidence steps are an isolated application/database rehearsal, a remote-location connectivity test and deliberate review of Pi retention and capacity. The Pi setup currently has no automatic off-site pruning.
 
+## Read the implementation details
+
+- [Backing up Immich properly](/posts/backing-up-immich-properly/) explains the media, database and key dependencies.
+- [How my Restic backup protects the homelab](/posts/how-my-restic-backup-protects-the-homelab/) explains scope and backup freshness.
+- [Using a second NAS and an off-site Raspberry Pi](/posts/using-a-second-nas-and-an-off-site-raspberry-pi/) records the implementation and actual restore evidence.
+- [Testing a restore before disaster strikes](/posts/testing-a-restore-before-disaster-strikes/) describes the checks that turn a backup into a usable recovery path.
+
+The goal is not to collect more destinations. It is to know which copy protects which data, how old it is, what unlocks it and what has actually been recovered from it.

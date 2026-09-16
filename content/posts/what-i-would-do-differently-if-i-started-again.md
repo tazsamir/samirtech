@@ -1,6 +1,6 @@
 ---
 title: "What I Would Do Differently If I Started Again"
-date: 2026-09-16T09:00:00+01:00
+date: 2026-09-16T03:00:00+01:00
 draft: false
 description: "The practical lessons I took from wiping my TrueNAS server and recovering years of family photos."
 tags: [backups, homelab, lessons-learned, truenas]

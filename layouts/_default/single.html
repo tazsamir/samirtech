@@ -13,7 +13,7 @@
     <aside class="post-series">
       <strong>Part of the “{{ $series }}” series</strong>
       <ul>
-        {{ range where $.Site.RegularPages "Params.series" "intersect" (slice $series) }}
+        {{ range sort (where $.Site.RegularPages "Params.series" "intersect" (slice $series)) "Params.series_order" "asc" }}
           <li>{{ if eq .RelPermalink $.RelPermalink }}<strong>{{ .Title }}</strong>{{ else }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}</li>
         {{ end }}
       </ul>
