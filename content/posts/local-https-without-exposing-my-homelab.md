@@ -1,7 +1,7 @@
 ---
 title: "Local HTTPS Without Exposing My Homelab to the Internet"
-date: 2026-09-16T03:00:00+01:00
-draft: true
+date: 2026-09-16T03:18:48+01:00
+draft: false
 description: "How Caddy, CoreDNS and DNS-01 certificates give private services friendly names and trusted HTTPS without opening them to the internet."
 tags: [homelab, networking, caddy, dns, self-hosting]
 ---
