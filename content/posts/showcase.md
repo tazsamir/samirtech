@@ -11,7 +11,71 @@ summary: "The hardware, services and network design behind my homelab."
 
 This is my personal lab: a small collection of repurposed hardware, storage and networking equipment used to learn, host services and keep important data under my control. It is intentionally practical rather than flashy, with low power use, recoverability and simple maintenance as the priorities.
 
-![Homelab topology diagram](/homelab-topology.svg)
+## The lab at a glance
+
+A logical map of the lab, not a rack photograph or a physical wiring plan. The everyday services share the home network; backup destinations are shown separately so they are not mistaken for machines that must all stay on.
+
+### Everyday use
+
+```text
+      PC / phone / tablet / TV
+                  |
+          HOME NETWORK
+                  |
+   +--------------+--------------+
+   |                             |
+GEEKOM N100                 MAIN TRUENAS
+Always-on Docker           HP desktop
+   |                             |
+   +-- Caddy: local HTTPS        +-- Files
+   +-- CoreDNS: local names      +-- Photos
+   +-- Hosted services          +-- Live storage
+   +-- Monitoring
+```
+
+The N100 runs services; the main NAS holds the primary storage. They are peers on the network, not a chain where all NAS traffic passes through the N100.
+
+### Recovery paths
+
+```text
+MAIN TRUENAS
+   |
+   +-- Local replication
+   |       |
+   |       v
+   |   SECOND TRUENAS
+   |   Fractal Node 804
+   |   Usually off / suspended
+   |
+   +-- Encrypted cloud copy
+           |
+           v
+       OFF-SITE STORAGE
+
+SELECTED FILES + CONFIG COPIES
+   |
+   +-- Encrypted Restic backup
+           |
+           v
+       RASPBERRY PI 4
+       Separate backup destination
+```
+
+The second NAS is a local recovery copy, not an off-site backup. The Pi has passed sample file restores locally; placing it at a separate location and verifying remote connectivity remain separate steps. The Restic selection is not a full copy of every service, database or media library.
+
+### On-demand experiments
+
+```text
+DELL MICRO PC
+   +-- Proxmox / virtual machines
+   +-- Powered off until needed
+
+GL.iNet ROUTER
+   +-- Isolated / mobile lab work
+   +-- Separate from home-network edge
+```
+
+**Design goal:** keep daily services quiet and low-power, wake the experiment hardware only when needed, and keep recovery copies separate from the systems they protect.
 
 ## Hardware
 
