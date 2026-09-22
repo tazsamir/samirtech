@@ -101,7 +101,7 @@ The GL.iNet router is the network edge for isolated or mobile lab work. It lets 
 
 ### Raspberry Pi 4 — additional backup destination
 
-The Pi holds an encrypted Restic repository for selected important files and copied configuration snapshots. A picture and Docker-project files have been restored and verified from it. It is intended for a separate location; remote-location connectivity is not established by those local tests.
+The Pi holds an encrypted Restic repository for selected important files and configuration snapshots. It is now running at a separate location, reachable over Tailscale MagicDNS from the backup host. Backups have completed successfully, including a 22 September run that processed 69,921 files totalling 204.603 GiB, with repository integrity checks finding no errors. A picture and Docker-project files have been restored and verified from it locally; the live remote-location backup is now a confirmed working layer, not just an intended one.
 
 [Read the implementation and restore evidence](/posts/using-a-second-nas-and-an-off-site-raspberry-pi/).
 

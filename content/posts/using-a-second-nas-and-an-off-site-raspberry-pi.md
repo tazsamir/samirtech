@@ -2,7 +2,7 @@
 title: "Using a Second NAS and an Off-Site Raspberry Pi"
 date: 2026-09-15T09:00:00+01:00
 draft: false
-description: "How my Raspberry Pi 4 backup uses encrypted Restic snapshots over Tailscale, and what a real picture and Docker-project restore proved."
+description: "How my Raspberry Pi 4 backup is now running at a separate location, how the encrypted Restic snapshots reach it over Tailscale, and what the confirmed backup results show."
 tags: [backups, truenas, raspberry-pi, homelab, restic, recovery]
 series: ["Learning Backups the Hard Way"]
 series_order: 6
