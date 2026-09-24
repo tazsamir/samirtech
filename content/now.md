@@ -3,7 +3,7 @@ title: "Now"
 description: "What I am currently building, learning and improving."
 layout: "single"
 slug: "now"
-aliases: ["/now/"]
+aliases: ["/posts/now/"]
 draft: false
 ---
 

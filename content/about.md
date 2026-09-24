@@ -3,6 +3,7 @@ title: "About me"
 date: 2023-05-07T11:45:50+01:00
 draft: false
 url: "/about/"
+aliases: ["/posts/about/"]
 summary: Technical support engineer, homelab builder and Linux enthusiast based in the West Midlands.
 description: Technical support engineer, homelab builder and Linux enthusiast based in the West Midlands.
 keywords: ["technical support", "Linux", "homelab", "Docker"]

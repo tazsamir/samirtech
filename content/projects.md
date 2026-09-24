@@ -3,7 +3,7 @@ title: "Projects"
 description: "The systems, experiments and practical projects behind Samirtech."
 layout: "single"
 slug: "projects"
-aliases: ["/projects/"]
+aliases: ["/posts/projects/"]
 draft: false
 ---
 

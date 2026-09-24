@@ -3,6 +3,7 @@ title: "Showcase"
 date: 2026-09-10T17:00:00+01:00
 draft: false
 url: "/showcase/"
+aliases: ["/posts/showcase/"]
 description: "A practical homelab built from quiet, second-hand and low-power hardware."
 summary: "The hardware, services and network design behind my homelab."
 ---

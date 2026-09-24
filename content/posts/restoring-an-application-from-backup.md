@@ -12,17 +12,17 @@ Getting files back is not the same as getting an application back. A database mi
 
 On **9 September 2026**, I went beyond restoring files: I started an isolated [Navidrome](https://www.navidrome.org/) instance using a recovered copy of its SQLite database. This article records that rehearsal, checked against its saved execution output on 17 September. It is not a new test performed today.
 
-**The result was a successful, limited application/database recovery rehearsal—not a complete music-service recovery.** The replacement served its HTML interface, and the selected database record counts were unchanged after shutdown. I did not log in or play music.
+**The result was a successful application/database recovery rehearsal within a deliberately narrow scope.** The replacement served its HTML interface, and the selected database record counts were unchanged after shutdown. Login and playback remain the next test.
 
 ## What I was trying to prove
 
 My [earlier restore article](/posts/testing-a-restore-before-disaster-strikes/) explains why I test backups. Here the narrower question was: **can the application start against its backed-up database without disturbing the live service?**
 
-The source was a 6 September Restic configuration/application-data snapshot. The recorded restore recovered 8.065 GiB into a separate directory and verified 37,003 files. That established the file-recovery stage; it did not by itself establish application recovery.
+The source was a 6 September Restic configuration/application-data snapshot. The recorded restore recovered 8.065 GiB into a separate directory and verified 37,003 files. The next stage was to see whether Navidrome could actually use its recovered database.
 
 From that restored tree, the rehearsal copied Navidrome's database and any accompanying SQLite journal files into a second, disposable working directory. It did not point the replacement at the live database.
 
-SQLite is an embedded database, so there was no separate database-server container or SQL dump import in this test. PostgreSQL applications need a different, application-specific recovery procedure. In particular, this is not evidence of an Immich database restore.
+SQLite is an embedded database, so there was no separate database-server container or SQL dump import. PostgreSQL applications, including Immich, need a different recovery procedure.
 
 ## Isolation came before startup
 
@@ -41,7 +41,7 @@ The replacement instead used:
 
 An empty music directory is useful for isolation but potentially dangerous to a library database if a scanner runs against it. That is why this was a disposable copy, not a substitute production service.
 
-The saved report did **not** find the expected scanner-disabled log message. I can say the disabling settings were supplied and the selected counts survived this short run; I cannot claim the logs independently proved the scanner was disabled.
+The saved report did **not** contain the expected scanner-disabled log message. The settings were supplied and the selected counts survived the short run, but the log did not independently confirm that safeguard.
 
 ## The commands, with private details removed
 
@@ -83,7 +83,7 @@ docker exec navidrome-recovery-test \
   wget -qO- http://127.0.0.1:4533/
 ```
 
-The test retried during startup and required returned content containing an HTML marker. That proves an HTTP response with HTML, not a successful authenticated session, working browser assets or access to music.
+The test retried during startup and required returned content containing an HTML marker. This confirmed that Navidrome reached its web interface; authenticated use and playback were outside the rehearsal.
 
 The test then stopped the replacement before recounting database records:
 
@@ -121,9 +121,9 @@ Finally it removed only the named replacement container. The scratch evidence re
 
 The rehearsal command exited successfully. These are recorded results, not illustrative numbers.
 
-Matching counts are a useful check for obvious loss or an unintended rescan. They are not a comparison of every row, a guarantee that every relationship is correct, or proof that every feature works. Likewise, unchanged production start and restart values are a narrow non-disruption check, not a complete production audit.
+Matching counts checked for obvious loss or an unintended rescan. Unchanged production start and restart values also confirmed that the rehearsal had not restarted the live container.
 
-## What remains untested
+## What this rehearsal did not cover
 
 I did not verify:
 
@@ -135,12 +135,12 @@ I did not verify:
 - A production cutover, reverse proxy, DNS changes or remote-site access.
 - Any PostgreSQL application or a whole-server rebuild.
 
-The later Pi exercise recovered a picture and Glance project files, checked hashes and validated Compose syntax. It did **not** start a replacement application. Those results remain separate from this earlier Navidrome rehearsal and must not be used to imply a tested Pi-to-running-service recovery path.
+The later Pi exercise was a separate file-level test: it recovered a picture and Glance project files, checked hashes and validated Compose syntax, but did not start a replacement application.
 
 ## A manageable next rehearsal
 
 The next useful step would be a separately approved test with a small recovered music sample, isolated credentials and a deliberately controlled access path. Success would mean logging in, inspecting known records and playing that sample, while confirming production remained untouched.
 
-That is future work, not an outcome of this article. Before doing it, I would document the exact backup, compatible image, ownership requirements, mount boundaries, network restrictions and cleanup steps. Private credentials and recovery locations belong in a protected runbook outside this website.
+Before doing that, I would document the exact backup, compatible image, ownership requirements, mount boundaries, network restrictions and cleanup steps. Private credentials and recovery locations belong in a protected runbook outside this website.
 
 For the backup layers themselves, see [How My Restic Backup Protects the Homelab](/posts/how-my-restic-backup-protects-the-homelab/). The operational lesson here is smaller: **restore into isolation, start the application against the recovered copy, and state precisely what the checks prove.** A limited test with honest boundaries is more useful than calling a successful file copy a complete recovery.
