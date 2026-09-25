@@ -1,7 +1,6 @@
 ---
 title: "My Post-Backup Verification Checklist"
 date: 2026-09-24T00:00:00+01:00
-draft: true
 description: "A backup is not complete when the command exits: verify the snapshot, repository, monitoring and a representative restore."
 tags: [backups, restic, homelab, recovery, monitoring]
 ---
