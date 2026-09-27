@@ -1,7 +1,6 @@
 ---
 title: "Monitoring the Monitor with Atomic Status Files"
 date: 2026-09-24T00:00:00+01:00
-draft: true
 description: "How a health script can run successfully while publishing an empty report, and how temporary files, validation and freshness checks prevent it."
 tags: [monitoring, linux, reliability, automation, homelab]
 ---
