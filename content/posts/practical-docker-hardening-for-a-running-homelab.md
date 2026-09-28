@@ -1,7 +1,6 @@
 ---
 title: "Practical Docker Hardening for a Homelab That Is Already Running"
 date: 2026-09-24T00:00:00+01:00
-draft: true
 description: "An incremental way to improve logging, restart behaviour, health checks, exposure and backups without rebuilding a working Docker host."
 tags: [docker, homelab, security, monitoring, backups]
 ---
