@@ -2,5 +2,6 @@ rename-a-homelab-server-without-breaking-everything
 post-backup-verification-checklist
 monitoring-the-monitor-with-atomic-status-files
 practical-docker-hardening-for-a-running-homelab
+carrying-an-isolated-wifi-vlan-across-openwrt-and-managed-switches
 the-backup-layers-explained-by-what-each-one-survives
 my-threat-model-written-down
