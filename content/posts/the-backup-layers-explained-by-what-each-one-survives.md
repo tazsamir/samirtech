@@ -1,7 +1,6 @@
 ---
 title: "The Backup Layers, Explained by What Each One Survives"
 date: 2026-09-22T00:00:00+01:00
-draft: true
 description: "A reference of every backup layer in my homelab, what data it protects, how fresh it is, and which failure each one actually recovers from."
 tags: [backups, homelab, restic, truenas, 321-backup]
 ---
@@ -19,7 +18,7 @@ The point of listing layers is not to collect destinations. It is to stop preten
 | TrueNAS cloud-sync | Encrypted copy of Immich data to B2 | Daily, with a source snapshot | Loss of the whole NAS |
 | Server configuration backup | Docker host config and selected app data to a Restic repository | Weekly (Sunday 04:15) | Broken host or container config, not the media itself |
 | Off-site Pi backup | Selected irreplaceable files to an encrypted Restic repo | Daily (06:15) | Loss of the house, assuming the Pi is elsewhere |
-| Second NAS (Voyager) | Local recovery destination | Powered off when idle | Fast local recovery, not a scheduled guarantee |
+| Second NAS (Borgcube) | Local recovery destination | Powered off when idle | Fast local recovery, not a scheduled guarantee |
 
 Two layers do **not** belong on this list yet:
 
