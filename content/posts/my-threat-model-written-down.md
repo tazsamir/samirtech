@@ -1,7 +1,6 @@
 ---
 title: "My Threat Model, Written Down"
 date: 2026-09-22T00:00:00+01:00
-draft: true
 description: "What I am actually defending against by self-hosting, what I accept instead, and why a written threat model stops scope creep in the lab."
 tags: [security, self-hosting, homelab, threat-model]
 ---
