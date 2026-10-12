@@ -19,15 +19,15 @@ The numbers are a starting point, not proof of recoverability. Another folder on
 
 ## What is working now
 
-**Documentation updated: 16 September 2026.** This summary reflects the completed checks recorded in the linked articles and the 15 September configuration-backup check. It is not a new full recovery test.
+**Backup evidence reviewed: 12 October 2026.** This summary reflects the completed checks recorded in the linked articles. It is not a new full recovery test.
 
 - **Immich:** original media and PostgreSQL data are separate parts of the live service. Both matter to recovery.
 - **Local snapshots:** the documented Immich snapshot task runs hourly and retains snapshots for two weeks. These provide rollback on the same storage system, not protection from losing that system.
 - **Encrypted cloud backup:** the documented daily TrueNAS cloud-sync task pushes Immich data to Backblaze B2 and creates a source snapshot. An encrypted cloud recovery test completed successfully.
 - **Host configuration:** a weekly Restic job backs up the Docker host's configuration and selected application data to TrueNAS. The destination mount, repository structure and retrieval of a backed-up Compose file were checked.
-- **Raspberry Pi:** the initial selected-data backup completed, and a picture and Docker-project files were restored and verified from its encrypted Restic repository.
+- **Raspberry Pi:** it is physically at a separate location and reachable over Tailscale. Scheduled backups have succeeded since relocation; the latest documented run reported 46 snapshots, and a repository integrity check found no errors. A picture and Docker-project files had previously been restored and verified locally from its encrypted Restic repository.
 
-The Pi is intended for a separate location. The completed tests do **not** establish connectivity after relocation. Calling it an off-site design must not imply that the remote-location test has already happened.
+Physical relocation, Tailscale connectivity, a successful scheduled backup, a passing repository integrity check and a sample file restore are distinct claims. All have evidence, but they do **not** establish a complete replacement-host or application-and-database recovery.
 
 ## How the layers fit together
 
@@ -42,7 +42,7 @@ Docker host
 
 Selected NAS files + existing configuration snapshots
   └─ Daily Pi job → encrypted Restic repository
-                     remote-location connectivity still to be tested
+                     physically off-site; scheduled remote path verified
 ```
 
 These branches do not all contain the same data. A successful host-configuration backup is not evidence that the entire photo library or a fresh, consistent database dump is included. The Pi copies existing configuration snapshots; it does not make those snapshots newer.
@@ -63,9 +63,9 @@ Removable key storage is not another full data backup. It holds information requ
 
 The completed cloud recovery and Pi sample restores are useful evidence. They show that those tested copies could be accessed, decrypted and recovered at the time of the tests.
 
-They do not establish a complete replacement-server recovery, a fresh end-to-end Immich database restore from every backup destination, or reliable operation after moving the Pi. A structural repository check is also different from reading every stored data block.
+They do not establish a complete replacement-server recovery or a fresh end-to-end Immich database restore from every backup destination. A passing repository integrity check is also different from reading every stored data block or starting a recovered application against a restored database.
 
-My next confidence steps are an isolated application/database rehearsal, a remote-location connectivity test and deliberate review of Pi retention and capacity. The Pi setup currently has no automatic off-site pruning.
+My next confidence steps are an isolated application/database rehearsal and deliberate review of Pi retention and capacity. The Pi setup currently has no automatic off-site pruning.
 
 ## Read the implementation details
 

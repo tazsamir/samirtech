@@ -41,6 +41,12 @@ For the examples below, I use VLAN `30`. Substitute the VLAN ID chosen for your 
 
 The access point itself remains on the untagged management network. Only client traffic from the isolated SSID uses the tagged VLAN.
 
+## Prepare a rollback path before changing VLANs
+
+I export the router and switch configurations before changing membership, PVIDs or management addressing. I also record the original values and keep a laptop on a known untagged management port with a tested local administrator login. Where the hardware permits it, a serial console or other direct-management path is safer than depending on the Wi-Fi or trunk being changed.
+
+The rollback is decided before applying anything: change one device at a time, use an apply-with-rollback timer where available, and keep the old management VLAN until the new path works from a second session. If management disappears, I stop and restore the saved configuration through the direct path instead of making more remote guesses. This is slower than changing the whole path at once and much less likely to turn a VLAN mistake into a physical recovery visit.
+
 ## 1. Define the network in UniFi
 
 Because OpenWrt, not UniFi, is the gateway, I created the VLAN in UniFi as a **third-party gateway** network. Older UniFi versions called this a **VLAN-only** network. I then assigned a temporary test SSID to it.

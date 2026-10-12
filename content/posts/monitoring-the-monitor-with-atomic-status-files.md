@@ -50,6 +50,8 @@ On the same filesystem, `rename` is atomic. Readers see the old inode until the 
 
 Creating the temporary file in the destination directory is important. A move across filesystems may fall back to copy-and-delete semantics and lose the atomic guarantee.
 
+Atomic publication has two important limits. First, rename atomicity does not itself guarantee crash durability. A power loss can still discard data that existed only in cache; code that requires that guarantee must flush and `fsync` the temporary file before renaming it, then `fsync` the containing directory, while accounting for filesystem-specific behaviour. Second, atomic rename does not serialize concurrent writers. Two jobs can each publish a complete file and the last rename wins, even if it contains older data. I use one writer, a lock or generation checks when runs can overlap; unique temporary names prevent temporary-file collisions but not this race.
+
 ## Validate meaning, not only syntax
 
 Non-empty valid JSON is the minimum gate, not always the complete one. A report can be syntactically valid and operationally useless.

@@ -43,7 +43,7 @@ The moment I stop naming the threats, I start defending against *everything*, wh
 - A new backup destination only earns its place if it protects a *named* piece of data from a *named* failure.
 - A hardening tip I read online is only worth adopting if it moves the needle on something on this list.
 
-The list also keeps me honest about the gaps. The Pi is not yet confirmed off-site, so threat five is partially unhandled — and I would rather have that written down than have a tidy-looking setup that silently pretends otherwise.
+The list also keeps me honest about the gaps. The Pi is now physically at a separate location, reachable over Tailscale, and scheduled backups have succeeded since the move. That is useful protection against threat five, but it is not the same as a tested full replacement-host recovery — and I would rather keep that remaining gap visible than let a tidy-looking setup imply otherwise.
 
 ## The one-sentence version
 

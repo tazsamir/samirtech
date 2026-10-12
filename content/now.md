@@ -21,7 +21,7 @@ This page is a snapshot of the work currently taking most of my attention. It wi
 - [A clearer map of the backup layers and their limits](/posts/building-a-3-2-1-backup-system-for-my-homelab/).
 - [Documented configuration-backup scope and freshness](/posts/how-my-restic-backup-protects-the-homelab/).
 
-The next recovery milestones are an isolated application/database rehearsal and testing the Pi from its intended remote location. These remain next steps, not completed tests.
+The Pi is now physically at its separate location and scheduled backups over Tailscale have succeeded there. The next recovery milestone is an isolated replacement-host application-and-database rehearsal; that remains a next step, not a completed test.
 
 ## Learning
 

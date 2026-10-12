@@ -30,9 +30,9 @@ Their roles differ:
 - `nextcloud.cfg` describes accounts and folder connections;
 - each `{folder}_sync.log` records activity for a connection;
 - the hidden journal database stores the client's local sync state; and
-- `sync-exclude.lst` tells a connection which paths to ignore.
+- the client's global `sync-exclude.lst` provides fixed exclusion definitions; user patterns can be managed through **Edit Ignored Files**.
 
-Exact names and locations can vary by package and client version. Inspect the existing configuration rather than copying a path blindly. Configuration and logs may also contain private server names, usernames and filenames, so redact them before sharing.
+This global list is stored outside the synchronised tree and should not be confused with selective sync or a manually created per-directory `.sync-exclude.lst`. The client does not necessarily create a separate exclusion file for every folder connection. Exact names and locations can vary by package and client version, so inspect the existing configuration rather than copying a path blindly. Configuration and logs may also contain private server names, usernames and filenames, so redact them before sharing.
 
 ## Map every connection first
 
@@ -55,7 +55,13 @@ A local overlap is more obvious:
 
 Both arrangements can give two journals responsibility for the same remote content. Symptoms include duplicated downloads, repeated uploads, conflicts, files returning after deletion and exclusions that appear inconsistent.
 
-An exclusion applies to the connection that loads it. It does not automatically govern another connection.
+There are three different controls here:
+
+- **Global ignored-file definitions** include the client's fixed patterns and user patterns entered through **Edit Ignored Files**.
+- **Selective sync** uses **Choose what to sync** to include or omit server folders for one folder connection. This is the right control for giving `/Documents` or `/Pictures` to a dedicated connection.
+- **A manually created per-directory `.sync-exclude.lst`** may add recursive rules below its location. Client source documents this mechanism, but behaviour has varied by client version and virtual-file mode. I test it against the exact installed client rather than assuming it works everywhere.
+
+These controls have different scopes. A selective-sync choice for one connection does not govern another, while global ignored-file patterns are not evidence that every connection owns its own list file.
 
 ## Give each path one owner
 
@@ -71,7 +77,7 @@ The narrower connections then own those remote subtrees. The alternative is one 
 For each path, answer two questions:
 
 1. Which folder connection owns it?
-2. Which exclusion file does that connection load?
+2. Is it omitted by selective sync, a global/user ignored-file pattern, or a tested per-directory rule?
 
 ## Exclude working data, not just large data
 
@@ -94,7 +100,7 @@ If game saves need protection, identify the stable save files and back them up w
 
 ## Exclusion syntax needs testing
 
-Do not assume that `sync-exclude.lst` uses exactly the same rules as `.gitignore`, a shell glob or an `rsync` filter. Client versions can differ in their handling of path separators, wildcards, spaces and directory-only matches.
+Do not assume that the ignored-file pattern syntax, or a manually created `.sync-exclude.lst`, uses exactly the same rules as `.gitignore`, a shell glob or an `rsync` filter. Client versions can differ in their handling of path separators, wildcards, spaces and directory-only matches.
 
 Start with a simple path relative to that connection's root:
 
@@ -112,7 +118,7 @@ Phone\ Import/     # this is not necessarily shell syntax
 
 If the same directory name occurs in several places, test a path-specific rule supported by the installed client instead of using an over-broad name match.
 
-After changing exclusions, restart the client or pause and resume the affected connection, then use a disposable file to verify the result. An exclusion normally prevents future synchronisation; it is not an instruction to delete a copy already present on the server.
+After changing **Edit Ignored Files**, selective sync or a per-directory list, restart the client or pause and resume the affected connection, then use a disposable file to verify the result both locally and in the server UI. An exclusion normally prevents future synchronisation; it is not an instruction to delete a copy already present on the server. A rule appearing in a dialogue or file is not proof that this client version applied it.
 
 ## Read the matching log
 
@@ -163,8 +169,8 @@ Do not open or modify the database while the client is running.
 2. Record all local and remote roots in a table.
 3. Check for local nesting and remote nesting separately.
 4. Confirm that each local root exists and has the expected ownership.
-5. Identify the exclusion file used by each connection.
-6. Check each rule relative to that connection's root.
+5. Inspect global/user ignored-file patterns and each connection's selective-sync choices.
+6. If using a per-directory `.sync-exclude.lst`, test its rules relative to that directory on the installed client.
 7. Resume one connection at a time.
 8. Create a disposable file in an included path and one in an excluded path.
 9. Match the test time to the correct connection log.

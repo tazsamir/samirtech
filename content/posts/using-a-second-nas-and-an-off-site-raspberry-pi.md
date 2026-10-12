@@ -8,9 +8,9 @@ series: ["Learning Backups the Hard Way"]
 series_order: 6
 ---
 
-A second NAS is useful, but another copy in the same house is not protection against every disaster. My next backup layer uses a Raspberry Pi 4 with attached storage, intended for a separate location.
+A second NAS is useful, but another copy in the same house is not protection against every disaster. My additional backup layer uses a Raspberry Pi 4 with attached storage that is now physically at a separate location.
 
-This is no longer just a plan. The initial selected-data backup has completed, repository checks have passed, and I have restored a picture and a Docker application's backed-up files into an isolated test folder. The important distinction: this verifies recovery from the Pi, not connectivity after relocating it or a complete replacement-server recovery.
+This is no longer just a plan. The Pi is reachable over Tailscale and scheduled backups have succeeded since relocation; the latest documented run on 12 October 2026 reported 46 snapshots. A repository integrity check completed without errors. I had also previously restored a picture and a Docker application's backed-up files into an isolated test folder on the backup host. These are separate pieces of evidence, and none is a complete replacement-server recovery.
 
 ## Where the Pi fits
 
@@ -38,7 +38,7 @@ The repository contains selected photo originals, a photo archive, important per
 
 ## Tailscale DNS instead of a fixed address
 
-The configured destination now uses the Pi's full Tailscale MagicDNS name rather than an IP address. DNS resolution and authenticated repository access were tested from the backup host, and the normal backup wrapper successfully listed snapshots after the change.
+The configured destination uses the Pi's full Tailscale MagicDNS name rather than an IP address. DNS resolution and authenticated repository access work from the backup host at the Pi's separate location. Scheduled post-relocation backups have also completed successfully, so remote connectivity and the normal backup path are both evidenced rather than inferred from a one-off connection test.
 
 A name makes the configuration easier to understand, but it does not remove prerequisites: the recovery machine needs working Tailscale access, suitable access rules and DNS resolution. The Pi must also be online.
 
@@ -71,7 +71,7 @@ The job is scheduled daily with an overall timeout. It follows a defined sequenc
 
 There is no automatic offsite pruning in this setup. That avoids deleting recovery points during initial setup, but it also means retention and capacity need deliberate review. Deduplication reduces repeated storage; it does not make storage unlimited.
 
-A completed upload, a structural repository check and a restore test are different evidence. The scheduled `restic check` is not a full read of every stored data block.
+A completed scheduled backup, a repository integrity check and a restore test are different evidence. The successful post-relocation run proves the scheduled remote path worked at that time. The passing `restic check` found no repository errors, but it was not a full read of every stored data block. The earlier sample restore proves only that those selected files could be recovered.
 
 ## The restore rehearsal that actually ran
 
@@ -136,8 +136,8 @@ The tests establish that the selected picture and Docker-project files can be re
 - a successful live replacement application;
 - a full Immich database restore, including users and albums;
 - a complete server or NAS recovery;
-- a full repository data-read verification;
-- reliable connectivity after moving the Pi to its intended remote location.
+- a full repository data-read verification; or
+- a full replacement-host application-and-database recovery.
 
 Photo originals recover the media, but Immich's organization also depends on a compatible database backup. An existing dump directory is not proof that a current, compatible dump has been restored successfully.
 
@@ -145,6 +145,6 @@ Finally, the repository password and required access material need independent s
 
 ## The practical result
 
-The Pi backup has moved from an idea to a working encrypted repository with a successful, non-destructive sample restore. The next confidence steps are a deliberately isolated application/database rehearsal and a connectivity check at the remote location—not simply collecting more successful-upload notifications.
+The Pi backup is now a physically off-site encrypted repository with working Tailscale connectivity, successful scheduled post-relocation backups, a passing repository integrity check and an earlier non-destructive sample restore. The next confidence step is a deliberately isolated replacement-host application-and-database rehearsal—not simply collecting more successful-upload notifications.
 
 Further reading: [Restic documentation](https://restic.readthedocs.io/en/stable/), [Tailscale MagicDNS](https://tailscale.com/kb/1081/magicdns), and [Docker Compose configuration validation](https://docs.docker.com/reference/cli/docker/compose/config/).

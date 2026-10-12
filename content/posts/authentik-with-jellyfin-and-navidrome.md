@@ -111,7 +111,7 @@ music.example.invalid {
 
 This is an architectural example, not a drop-in configuration. The recommended outpost route can change between Authentik versions.
 
-With automatic user creation enabled, the first successful browser login creates a corresponding Navidrome account. New accounts should still be checked to ensure they have not received administrator rights accidentally.
+With automatic user creation enabled, a successful browser login creates a corresponding Navidrome account. On a fresh database, [Navidrome's documented bootstrap behaviour](https://www.navidrome.org/docs/usage/integration/authentication/) makes the first externally authenticated user an administrator. I therefore restrict the Authentik application, create and verify the intended administrator first, and only then allow ordinary media users through SSO. New accounts should still be checked to ensure their role is correct.
 
 ## The trusted-source trap
 
@@ -151,6 +151,17 @@ The setup for a new user is therefore:
 For Symfonium, select its Subsonic or OpenSubsonic provider. In Feishin, OpenSubsonic mode worked with this arrangement; its Navidrome-native mode followed a different path and conflicted with the proxy SSO configuration.
 
 The Authentik password should not be entered into those clients. SSO and API credentials serve different protocols and should remain separate.
+
+## Deprovision both authentication paths
+
+Removing a person from Navidrome alone is not enough while Authentik can still authorise them and automatic user creation remains enabled. I first remove the person from the approved media group or Authentik policy, then remove the matching Navidrome account through the administration UI. On releases with the [documented user CLI](https://www.navidrome.org/docs/usage/admin/cli/user/), the equivalent is:
+
+```sh
+navidrome user list
+navidrome user delete --user <username-or-id>
+```
+
+The delete command does not ask for confirmation, so I verify the target and take the normal database backup first. I then test that the public SSO route is denied and that the old Navidrome credential no longer works through the private OpenSubsonic path. Revoking only the SSO route leaves a native password usable; deleting only the Navidrome row allows an authorised SSO login to create it again.
 
 ## Verification checklist
 

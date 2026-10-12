@@ -38,6 +38,8 @@ TrueNAS:     media -> 3000:3000
 
 NFSv4 can support name-based identity mapping in a deliberately configured environment, but using NFSv4 does not prove that mapping is working. The useful question is not what the account is called. It is which identity TrueNAS sees for the request.
 
+With ordinary NFS `AUTH_SYS`, this is also a trust boundary rather than only a naming detail. The client sends numeric UID and GID claims and the server normally uses those claims for access checks; `AUTH_SYS` does not cryptographically prove that the remote process is really that user. Matching or remapping IDs can make permissions line up, but **UID mapping is not authentication**. I restrict exports to trusted clients and networks, retain appropriate root squashing, and would use an authenticated NFS security flavour such as Kerberos where the threat model requires identity assurance.
+
 ## Why I did not change every UID
 
 Renumbering an established account can affect far more than one share:

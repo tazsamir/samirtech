@@ -62,7 +62,7 @@ SELECTED FILES + CONFIG COPIES
        Separate backup destination
 ```
 
-The second NAS is a local recovery copy, not an off-site backup. The Pi has passed sample file restores locally; placing it at a separate location and verifying remote connectivity remain separate steps. The Restic selection is not a full copy of every service, database or media library.
+The second NAS is a local recovery copy, not an off-site backup. The Pi is physically at a separate location, reachable over Tailscale, and has completed scheduled backups since relocation. Its repository integrity check and earlier local sample restores are useful but separate evidence; no full replacement-host application-and-database recovery has been verified. The Restic selection is not a full copy of every service, database or media library.
 
 ### On-demand experiments
 
@@ -102,7 +102,7 @@ The GL.iNet router is the network edge for isolated or mobile lab work. It lets 
 
 ### Raspberry Pi 4 — additional backup destination
 
-The Pi holds an encrypted Restic repository for selected important files and configuration snapshots. It is now running at a separate location, reachable over Tailscale MagicDNS from the backup host. Backups have completed successfully, including a 22 September run that processed 69,921 files totalling 204.603 GiB, with repository integrity checks finding no errors. A picture and Docker-project files have been restored and verified from it locally; the live remote-location backup is now a confirmed working layer, not just an intended one.
+The Pi holds an encrypted Restic repository for selected important files and configuration snapshots. It is now running at a separate location, reachable over Tailscale MagicDNS from the backup host. Scheduled post-relocation backups have completed successfully; the latest documented run on 12 October 2026 reported 46 snapshots, and a repository integrity check found no errors. A picture and Docker-project files had previously been restored and verified from it locally. This confirms the remote backup path and selected-file recovery, not a full replacement-host recovery.
 
 [Read the implementation and restore evidence](/posts/using-a-second-nas-and-an-off-site-raspberry-pi/).
 

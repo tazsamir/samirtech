@@ -105,6 +105,32 @@ I inventory all real access paths before tightening bindings. Media discovery, g
 
 I also treat a read-write Docker socket mount as host-equivalent privilege. Services that only need selected Docker metadata should use a constrained socket proxy where practical.
 
+Docker-published ports need an extra check. Docker installs its own NAT and firewall rules, so published traffic can bypass the path I expected from ordinary UFW or firewalld policy, depending on the host's firewall backend. I do not assume a host rule has restricted a published port: I inspect the effective Docker rules and test the port from another machine on each relevant network. Where possible, I bind to a specific trusted address, use an internal Docker network or publish no host port at all.
+
+## Remove container privileges where the image permits it
+
+These controls are useful, but they are application-specific rather than safe bulk edits:
+
+```yaml
+services:
+  app:
+    user: "1000:1000"
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp
+```
+
+- Run as a non-root numeric UID/GID when the image supports it, with only the required mounts writable.
+- Drop all Linux capabilities, then add back only a capability the application demonstrably requires.
+- `no-new-privileges` prevents a process gaining extra privilege through setuid or setgid binaries.
+- A read-only root filesystem limits persistence, but the application may need explicit volumes or `tmpfs` mounts for caches, PID files and temporary data.
+
+I apply one control at a time, recreate the container, inspect its logs and exercise the real application. Some vendor images start as root so an entrypoint can adjust permissions before dropping privilege; forcing `user:` without checking that design can break initialisation or upgrades. I avoid `privileged: true`, host PID or network namespaces and broad device mounts unless a documented requirement justifies them.
+
 ## Protect state before recreating containers
 
 Before changing a stateful service I identify:
