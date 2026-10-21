@@ -152,6 +152,8 @@ Before I started investigating music streaming, I had an issue launching **Vampi
 
 **Later update:** I installed Vampire Survivors again and **it worked**. That resolves the original game-launch symptom in practice, although I didn't capture a specific error code or identify whether the earlier issue was a bad installation, incompatible files or something else. It was a **separate symptom**, not the later Atmosphère fatal error.
 
+![Vampire Survivors running again after being reinstalled](/images/posts/modded-switch/vampire-survivors-working.jpg)
+
 ## Adding Streamfin: Atmosphère stopped reaching HOME
 
 After the upgrade and the earlier game testing, I tried [Streamfin v1.1.0](https://github.com/dammitjeff/streamfin-switch/releases/tag/v1.1.0), a homebrew overlay intended to interact with a Jellyfin music library.
@@ -266,6 +268,10 @@ That makes the Switch more useful to me than I expected. It is a handheld for ga
 
 I tested games across GameCube, Wii, PSP, PlayStation (PSX), Game Boy Color and several other systems. They all worked in my testing, although some of the more demanding games needed an overclock. **God of War: Chains of Olympus** on PSP was one example, while **Mario Kart: Double Dash!!** ran well on GameCube without the same trouble.
 
+![Tico library showing Persona 3 Portable and several available emulated systems](/images/posts/modded-switch/tico-library.jpg)
+
+![Metal Gear Solid running through the PlayStation side of the Tico setup](/images/posts/modded-switch/metal-gear-solid-psx.jpg)
+
 Getting the GameCube library working required one extra step. The system appeared in Tico, but its library initially showed **0 games**, despite these three files being on the microSD card:
 
 ```text
@@ -289,6 +295,8 @@ find "$SD/tico/cores" \
 ```
 
 The explanation was the version I had installed: **Tico 0.7.9, the latest public release, showed RVZ files for GameCube, not my CISO files**. The folder and Dolphin core were present, but the library scanner did not index those `.ciso` images. After using `.rvz` files instead, I could test the GameCube side properly, including a successful run of Mario Kart: Double Dash!!.
+
+![Mario Kart Double Dash running successfully from an RVZ GameCube image](/images/posts/modded-switch/mario-kart-double-dash.jpg)
 
 The Tico wiki currently describes an unreleased 0.8.0 and lists both `.rvz` and `.ciso`, with RVZ recommended. That does not match the latest public release or what its scanner showed on my Switch, so I followed the formats displayed by Tico 0.7.9 itself.
 
