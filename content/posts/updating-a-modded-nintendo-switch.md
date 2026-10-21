@@ -262,11 +262,11 @@ Streamfin covers music, but it is not the full Jellyfin video client. I also tri
 
 That makes the Switch more useful to me than I expected. It is a handheld for games again and a convenient screen for the media I already keep in Jellyfin. Switchfin is still an early-stage project, so codec and subtitle compatibility may vary.
 
-## Retro gaming with Tico: PSP works, and GameCube needs RVZ on the latest release
+## Retro gaming with Tico: testing GameCube, Wii, PSP, PSX and Game Boy Color
 
-I also tried Tico for emulation. **Persona 3 on PSP launched successfully**, so at least the PSP side of the setup was working.
+I tested games across GameCube, Wii, PSP, PlayStation (PSX), Game Boy Color and several other systems. They all worked in my testing, although some of the more demanding games needed an overclock. **God of War: Chains of Olympus** on PSP was one example, while **Mario Kart: Double Dash!!** ran well on GameCube without the same trouble.
 
-GameCube was a different story. The GameCube system appeared in Tico, but its library showed **0 games**, despite these three files being on the microSD card:
+Getting the GameCube library working required one extra step. The system appeared in Tico, but its library initially showed **0 games**, despite these three files being on the microSD card:
 
 ```text
 /tico/roms/gc/
@@ -288,7 +288,7 @@ find "$SD/tico/cores" \
   \( -iname '*dolphin*' -o -iname '*gc*' \)
 ```
 
-The explanation was the version I had installed: **Tico 0.7.9, the latest public release, showed RVZ files for GameCube, not my CISO files**. The folder and Dolphin core were present, but the library scanner did not index those `.ciso` images. I therefore need to use `.rvz` files with this setup rather than keep treating the empty library as a missing-core problem.
+The explanation was the version I had installed: **Tico 0.7.9, the latest public release, showed RVZ files for GameCube, not my CISO files**. The folder and Dolphin core were present, but the library scanner did not index those `.ciso` images. After using `.rvz` files instead, I could test the GameCube side properly, including a successful run of Mario Kart: Double Dash!!.
 
 The Tico wiki currently describes an unreleased 0.8.0 and lists both `.rvz` and `.ciso`, with RVZ recommended. That does not match the latest public release or what its scanner showed on my Switch, so I followed the formats displayed by Tico 0.7.9 itself.
 
@@ -306,8 +306,9 @@ The Tico wiki currently describes an unreleased 0.8.0 and lists both `.rvz` and 
 | Ultrahand overlay memory | Changed from **4 MB to 8 MB** with A; artist browsing stopped crashing in testing |
 | Streamfin/Jellyfin playback | **Verified: songs played successfully** |
 | Switchfin/Jellyfin video | **Verified: TV programmes and anime played successfully** |
-| Tico PSP / Persona 3 | **Working** |
-| Tico 0.7.9 GameCube scanning | `.ciso` files were not shown; this version expected `.rvz` in my setup |
+| Tico emulation | **GameCube, Wii, PSP, PSX, Game Boy Color and other tested games worked** |
+| Demanding PSP games | Some needed an overclock, including **God of War: Chains of Olympus** |
+| Tico 0.7.9 GameCube scanning | `.ciso` files were not shown; `.rvz` worked, including **Mario Kart: Double Dash!!** |
 
 ## Lessons learned
 
@@ -320,7 +321,7 @@ The Tico wiki currently describes an unreleased 0.8.0 and lists both `.rvz` and 
 - **Check emulator formats against the installed release.** Tico 0.7.9 is the latest public version and showed RVZ for GameCube in my setup; the wiki is already documenting an unreleased 0.8.0.
 - **Separate observed fixes from suspected causes.** The Atmosphère recovery was verified; the precise cause of the Streamfin conflict remains unclear.
 
-What started as a way to spend more of the Christmas break playing games and less time on my phone turned into an unexpectedly technical project. The Switch now boots again, Vampire Survivors works after reinstalling, PSP emulation works and Streamfin plays music from Jellyfin. With the overlay memory set to 8 MB, I could browse Jellyfin artists without crashing. Switchfin has also been great for watching TV programmes and anime. For GameCube, I now know that the CISO files were the wrong fit for the Tico 0.7.9 scanner I was using; RVZ is the format to try next.
+What started as a way to spend more of the Christmas break playing games and less time on my phone turned into an unexpectedly technical project. The Switch now boots again, Vampire Survivors works after reinstalling, and Streamfin plays music from Jellyfin. With the overlay memory set to 8 MB, I could browse Jellyfin artists without crashing. Switchfin has also been great for watching TV programmes and anime. Tico successfully ran the GameCube, Wii, PSP, PSX, Game Boy Color and other games I tested. Some demanding titles, such as God of War: Chains of Olympus, benefited from an overclock, while Mario Kart: Double Dash!! ran well after I replaced the unrecognised CISO files with RVZ versions.
 
 ## References
 
