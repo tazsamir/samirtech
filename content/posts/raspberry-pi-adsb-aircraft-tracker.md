@@ -1,6 +1,7 @@
 ---
 title: "I Turned an Old Raspberry Pi 3B into a Live Aircraft Tracker"
 date: 2026-10-28T11:04:23Z
+lastmod: 2026-10-28T17:20:00Z
 draft: false
 description: "How I reused a Raspberry Pi 3B and RTL-SDR Blog V3 to receive live aircraft transmissions, share ADS-B data and alert me to military and unidentified targets."
 tags: [ads-b, raspberry-pi, rtl-sdr, radio, homelab]
@@ -70,7 +71,7 @@ I configured the receiver to feed [adsb.lol](https://adsb.lol/). The normal ADS-
 
 MLAT, or multilateration, is an additional process that estimates an aircraft's position by comparing the arrival time of its transponder messages at several receivers. It has occasionally disconnected and reconnected on the Pi 3B, but that does not stop direct ADS-B reception. The older Pi is adequate for this project, although its timing is less ideal than newer hardware for MLAT.
 
-I kept the number of feeder services modest and left this RTL-SDR dedicated to ADS-B. A single tuner cannot listen to 1090 MHz aircraft transmissions and an unrelated radio band at the same time. I would use a second receiver if I wanted to monitor AIS, radiosondes or other signals continuously.
+I kept the number of feeder services modest and use ADS-B as the radio's normal job. A single tuner cannot listen to 1090 MHz aircraft transmissions and an unrelated radio band at the same time. For short experiments, a controller stops the ADS-B decoder, releases the tuner, runs the other task for a fixed period and then restores the decoder automatically. I tested that approach with FM reception and scheduled Meteor-M weather-satellite passes, but ADS-B remains the default.
 
 ## Military and unidentified-aircraft alerts
 
@@ -81,6 +82,14 @@ The live map later caught two UK military Eurofighters: **DESTRO41** (ZK379) and
 ![Aircraft panels identifying DESTRO41 and DESTRO42 as military Eurofighters](/images/posts/adsb/military-typhoons.webp)
 
 *Two Eurofighter Typhoons received by the Pi. The source screenshots were cropped to retain the aircraft identities while excluding the map and location-related telemetry.*
+
+The alerts continued through the afternoon. The watcher recorded ten distinct military aircraft identities between 11:40 and 16:58 UTC. They included two Eurofighters, two Grob trainers, an Airbus Voyager tanker, an Airbus Helicopters EC135/635, two Apache helicopters, an Irish Air Corps Falcon 6X and a Bahrain Royal Flight Gulfstream G600.
+
+One Eurofighter, ZK379, later appeared under the callsign **ROGUE041**. The Irish Air Corps aircraft appeared as **IRL290** at 41,000 feet, giving me a useful example of a military alert that was not a fast jet or trainer.
+
+![Cropped aircraft panels for ROGUE041 and Irish Air Corps IRL290](/images/posts/adsb/military-alerts-later.webp)
+
+*Later military detections received by the same Pi. The crop retains the aircraft identity and type while omitting coordinates and location-related telemetry.*
 
 I added a small watcher that reads the receiver's aircraft data every 15 seconds and sends a [Gotify](https://gotify.net/) notification when it finds something interesting:
 
@@ -128,6 +137,7 @@ That was a useful reminder: a security improvement is not complete until the mon
 | Isolated tablets could not open the map | I added a restricted map-only route rather than general network access. |
 | MLAT occasionally disconnected | I confirmed direct ADS-B remained healthy and that MLAT later reconnected. |
 | Monitoring failed after SSH hardening | I moved it to the restricted account and narrowly scoped the required `sudo` access. |
+| The Pi reported undervoltage and became unstable | I replaced the long, thin micro-USB lead with a short, thicker cable and rechecked the receiver after rebooting. |
 
 ## Is the Raspberry Pi 3B still enough?
 
@@ -144,7 +154,7 @@ The same applies to replacing the RTL-SDR Blog V3 with a V4. For a dedicated 109
 3. Compare message rate, aircraft count and maximum range before and after moving it.
 4. Check temperature, voltage and Wi-Fi stability after relocation.
 5. Consider a 1090 MHz filter or low-noise amplifier only if the new position reveals a problem they would solve.
-6. Add a separate RTL-SDR if I want another radio service running continuously.
+6. Keep any single-SDR experiments time-limited and verify that ADS-B resumes automatically afterwards.
 
 ## Was it worth doing?
 
