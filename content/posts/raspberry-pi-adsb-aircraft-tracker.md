@@ -76,6 +76,12 @@ I kept the number of feeder services modest and left this RTL-SDR dedicated to A
 
 Seeing DESTRO41 live made me check the receiver's stored history. It had recorded four military airframes in total at that point, including the Eurofighter, a Canadian military aircraft and two RAF training aircraft.
 
+The live map later caught two UK military Eurofighters: **DESTRO41** (ZK379) and **DESTRO42** (ZK367). Both were shown at 14,000 feet and positioned through MLAT rather than a directly broadcast ADS-B position.
+
+![Aircraft panels identifying DESTRO41 and DESTRO42 as military Eurofighters](/images/posts/adsb/military-typhoons.webp)
+
+*Two Eurofighter Typhoons received by the Pi. The source screenshots were cropped to retain the aircraft identities while excluding the map and location-related telemetry.*
+
 I added a small watcher that reads the receiver's aircraft data every 15 seconds and sends a [Gotify](https://gotify.net/) notification when it finds something interesting:
 
 - aircraft marked as military trigger an immediate alert;
