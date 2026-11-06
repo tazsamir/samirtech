@@ -11,8 +11,8 @@ enableRobotsTXT = true
   # the list of set content will show up on your index page (baseurl).
   contentTypeName = "posts"
 
-  # ["orange", "blue", "red", "green", "pink"]
-  themeColor = "green"
+  # Custom Matrix-inspired palette in assets/css/color/matrix.scss.
+  themeColor = "matrix"
   subtitle = "Technical support, homelab, Linux and practical self-hosting notes from Tahir Samir."
   description = "Technical support, homelab, Linux and practical self-hosting notes from Tahir Samir."
   keywords = ["homelab", "Linux", "Docker", "self-hosting", "technical support", "backups"]

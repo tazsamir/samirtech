@@ -1,0 +1,12 @@
+/* Matrix-inspired palette: neutral ink and readable text, green for controls. */
+$background: #0c130f;
+$color: #e5eee7;
+$border-color: rgba(133, 229, 166, .18);
+
+$phone: "max-width: 684px";
+$tablet: "max-width: 900px";
+
+:root {
+  --phoneWidth: (max-width: 684px);
+  --tabletWidth: (max-width: 900px);
+}
